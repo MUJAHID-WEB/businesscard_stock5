@@ -1,0 +1,122 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.module %}
+
+{% block render_block %}
+    <div class="text_slider">
+        <div class="text_slider_container">
+            <div class="text_slider_parent">
+                <div class="text_slider_wrapper">
+                    {% for item in module.slider %}
+                        <div class="slider_item {% if loop.first %}active{% endif %}">
+                            <h3>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38" fill="none">
+                                    <path d="M7.9165 34.8346C10.5398 34.8346 12.6665 32.708 12.6665 30.0846V18.6171V3.16797H3.1665V30.0846C3.1665 32.708 5.29315 34.8346 7.9165 34.8346Z" fill="#FFDFA4"/>
+                                    <path d="M7.9165 34.8346C10.5399 34.8346 12.6665 32.708 12.6665 30.0846V18.6171M7.9165 34.8346C5.29315 34.8346 3.1665 32.708 3.1665 30.0846V3.16797H12.6665V18.6171M7.9165 34.8346H34.8332V25.3346H19.384M12.6665 18.6171L27.7198 3.5638L28.0924 3.16797L34.8215 9.89714L19.384 25.3346M19.384 25.3346L11.2752 33.4434C9.42028 35.2984 6.41274 35.2984 4.55775 33.4434" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M11.2754 33.4434L34.8216 9.89714L28.0924 3.16797L12.6666 18.6171" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M19.3839 25.3359H34.833V34.8359H9.89551" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M19.3839 25.3359H34.833V34.8359H9.89551" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M7.9165 34.8346C10.5398 34.8346 12.6665 32.708 12.6665 30.0846V18.6171V3.16797H3.1665V30.0846C3.1665 32.708 5.29315 34.8346 7.9165 34.8346Z" fill="#FFDFA4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                {{ item.title.translatable }}
+                            </h3>
+                        </div>
+                    {% endfor %}
+
+                    {# Clone first few items to allow smooth loop #}
+                    {% for item in module.slider|slice(0, 5) %}
+                        {% set image = page.media[item.image] %}
+                        <div class="slider_item clone">
+                            <h3>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38" fill="none">
+                                    <path d="M7.9165 34.8346C10.5398 34.8346 12.6665 32.708 12.6665 30.0846V18.6171V3.16797H3.1665V30.0846C3.1665 32.708 5.29315 34.8346 7.9165 34.8346Z" fill="#FFDFA4"/>
+                                    <path d="M7.9165 34.8346C10.5399 34.8346 12.6665 32.708 12.6665 30.0846V18.6171M7.9165 34.8346C5.29315 34.8346 3.1665 32.708 3.1665 30.0846V3.16797H12.6665V18.6171M7.9165 34.8346H34.8332V25.3346H19.384M12.6665 18.6171L27.7198 3.5638L28.0924 3.16797L34.8215 9.89714L19.384 25.3346M19.384 25.3346L11.2752 33.4434C9.42028 35.2984 6.41274 35.2984 4.55775 33.4434" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M11.2754 33.4434L34.8216 9.89714L28.0924 3.16797L12.6666 18.6171" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M19.3839 25.3359H34.833V34.8359H9.89551" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M19.3839 25.3359H34.833V34.8359H9.89551" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M7.9165 34.8346C10.5398 34.8346 12.6665 32.708 12.6665 30.0846V18.6171V3.16797H3.1665V30.0846C3.1665 32.708 5.29315 34.8346 7.9165 34.8346Z" fill="#FFDFA4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                {{ item.title.translatable }}
+                            </h3>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div class="slider_dots">
+                    {% for item in module.slider %}
+                        <span class="dot {% if loop.first %}active{% endif %}" data-slide="{{ loop.index0 }}"></span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sliderSettings = {
+                autoSlideEnabled: true,
+                autoSlideInterval: 2000,
+            };
+
+            const wrapper = document.querySelector('.text_slider_container .text_slider_wrapper');
+            const items = document.querySelectorAll('.text_slider_container .slider_item');
+            const dots = document.querySelectorAll('.text_slider_container .dot');
+            const itemWidth = items[0].offsetWidth;
+            const visibleItems = 5;
+            const totalItems = items.length;
+            const clonedItems = 5;
+            const actualItems = totalItems - clonedItems;
+
+            let index = 0;
+            let autoSlideTimer = null;
+
+            function updateSlider() {
+                const translateX = -(itemWidth * index);
+                wrapper.style.transform = `translateX(${translateX}px)`;
+
+                // Update dots
+                dots.forEach(dot => dot.classList.remove('active'));
+                if (dots[index % actualItems]) {
+                    dots[index % actualItems].classList.add('active');
+                }
+
+                // Update slider items
+                items.forEach(item => item.classList.remove('active'));
+                if (items[index]) {
+                    items[index].classList.add('active');
+                }
+            }
+
+            function autoSlide() {
+                index++;
+                if (index > actualItems) {
+                    wrapper.style.transition = 'none';
+                    index = 0;
+                    wrapper.style.transform = `translateX(0px)`;
+                    setTimeout(() => {
+                        wrapper.style.transition = 'transform 0.6s ease-in-out';
+                        index++;
+                        updateSlider();
+                    }, 50);
+                } else {
+                    updateSlider();
+                }
+            }
+
+            dots.forEach(dot => {
+                dot.addEventListener('click', (e) => {
+                    const slideTo = parseInt(e.target.getAttribute('data-slide'));
+                    index = slideTo;
+                    updateSlider();
+                });
+            });
+
+            if (sliderSettings.autoSlideEnabled) {
+                autoSlideTimer = setInterval(autoSlide, sliderSettings.autoSlideInterval);
+            }
+
+            window.addEventListener('resize', updateSlider);
+        });
+    </script>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+title: Text Slider
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+
+            header.slider_section:
+              ordering@: 3
+              type: section
+              title: Slider Section
+              underline: false
+              label: false
+              fields:
+                header.module._title.translatable:
+                  type: textarea
+                  label: Title
+                  classes: 'translatable'
+
+                header.module.slider:
+                  type: list
+                  fields:
+                    .title.translatable:
+                      type: Text
+                      label: Title
+                      classes: 'translatable'
+            header.media_order:
+              ordering@: 99
+
+
