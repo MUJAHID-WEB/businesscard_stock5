@@ -1,0 +1,107 @@
+.text_slider {
+  padding: 0;
+  background-color: var(--color-white);
+
+  .text_slider_container {
+    @include desktop-small {
+      padding: 0;
+    }
+  }
+
+  .text_slider_parent {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    padding: 30px 0;
+    background-color: var(--color-primary);
+    // transform: rotate(2deg);
+    // width: 101%;
+    // margin-left: -0.5%;
+
+    @include desktop-small{
+      padding: 16px 0;
+    }
+  }
+
+  .text_slider_wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    transition: transform 0.6s ease-in-out;
+    gap: 25px;
+
+    .slider_item {
+      flex: 0 0 calc(100% / 5);
+      // max-width: calc(100% / 5);
+      box-sizing: border-box;
+      text-align: left;
+
+      @include desktop-small {
+        flex: 0 0 calc((100% / 3) + 25px);
+        // max-width: calc((100% / 3) + 25px);
+      }
+
+      @include mobile{
+        gap: 48px;
+        flex: 0 0 calc((100% / 3) + 48px);
+        // max-width: calc((100% / 3) + 48px);
+      }
+
+      h3{
+        @include typography(text-xl, bold);
+        color: var(--color-white);
+        white-space: nowrap;
+        display: flex;
+        gap: 14px;
+        align-items: center;
+        @include desktop-small {
+          @include typography(text-md, bold);
+        }
+
+        svg {
+          width: 38px;
+          height: 38px;
+          flex-shrink: 0;
+        }
+
+        @include mobile{
+          font-size: 12.847px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 17.129px;
+        }
+      }
+
+      .clone {
+        opacity: 0;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .slider_dots {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+    display: none;
+
+    .dot {
+      width: 14px;
+      height: 14px;
+      background-color: var(--color-secondary);
+      border-radius: 100%;
+      display: block;
+
+      &.active {
+        width: 24px;
+        height: 24px;
+        background-color: var(--color-primary);
+      }
+    }
+  }
+}
