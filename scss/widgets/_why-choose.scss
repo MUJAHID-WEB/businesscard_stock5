@@ -1,16 +1,16 @@
 .why_choose {
   display: flex;
-  padding: 100px 0;
+  padding: 5rem 0;
   flex-direction: column;
   align-items: center;
-  gap: 60px;
+  row-gap: 5rem;
   align-self: stretch;
   background-color: var(--feature-bg-container);
   position: relative;
 
   @include desktop-small {
-    padding: 40px 0;
-    gap: 40px;
+    padding: 4rem 0;
+    row-gap: 2.625rem;
   }
 
   .container {
@@ -23,35 +23,34 @@
 
   .why_choose_header {
     display: flex;
-    // flex-direction: column;
-    justify-content: space-between;
-    text-align: left;
-    align-items: flex-start;
-    gap: 48px;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap: 24px;
 
     @include desktop-small {
-      flex-direction: column;
       width: 100%;
-      gap: 18px;
+      gap: 24px;
     }
 
     .block-title {
-      @include typography(display-md, medium);
+      @include typography(display-lg, medium);
       // opacity: 0;
       font-family: var(--secondary-font);
       color: var(--color-text-dark);
 
       @include desktop-small {
-        @include typography(display-sm, semibold);
+        @include typography(display-md, medium);
       }
 
       span{
         font-family: var(--secondary-font);
         color: var(--color-primary);
-        @include typography(display-lg, bold);
+        @include typography(display-lg, medium);
 
         @include desktop-small {
-          @include typography(display-md, bold);
+          @include typography(display-md, medium);
         }
       }
     }
@@ -60,54 +59,18 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 22px;
-      max-width: 562px;
-      width: 100%;
+      gap: 1.5rem;
 
       .why_choose_description {
         // opacity: 0;
         p {
           color: var(--color-text-light);
-          @include typography(text-md, regular);
-
-          @include desktop-small{
+          @include typography(text-xl, regular);
+          @include mobile{
             @include typography(text-md, regular);
           }
         }
       }
-
-      .why_choose_buttons {
-        display: flex;
-        gap: 14px;
-        justify-content: flex-start;
-
-        @include desktop-small {
-          gap: 14px;
-          flex-direction: column;
-          width: 100%;
-        }
-
-        .button{
-          
-          align-self: flex-start;
-          display: flex;
-
-
-  
-          // svg {
-          //   path {
-          //     stroke: var(--color-white);
-          //   }
-          // }
-  
-          &:nth-child(2){
-            background: var(--color-secondary);
-            border: 1px solid var(--color-white);
-          }
-        }
-
-      }
-
 
     }
 
@@ -117,7 +80,6 @@
   .why_choose_container {
     position: relative;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 1.25rem;
@@ -130,123 +92,137 @@
     }
 
 
-
     .why_choose_card {
+      flex: 33.33%;
       display: flex;
+      flex-direction: column;
       align-items: flex-start;
-      flex: 0 0 calc(50% - 0.625rem);
-      max-width: calc(50% - 0.625rem);
-      box-sizing: border-box;
-      gap: 1.25rem;
+      gap: 1.5rem;
       cursor: pointer;
+      border-radius: 16px;
       align-self: stretch;
+      // opacity: 0;
       transition: transform 0.3s ease;
-      max-height: 268px;
 
       @include desktop-small {
         width: 100%;
-        flex-direction: column;
-        // flex: 0 0 calc(100% - 0.625rem);
-        max-width: unset;
-        
       }
 
-      @include tablet{
-        max-height: unset;
-      }
-
-      @include tablet{
-        .img_out{
-          width: 100%;
+      .img_out{
+        width: 100%;
         img{
           width: 100%;
         }
       }
-      }
-
-      
 
       .why_choose_contents{
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         align-self: stretch;
         position: relative;
-        justify-content: space-between;
-        padding: 20px;
-        border-radius: 20px;
+        padding: 1.875rem;
+        border-radius: 24px;
         width: 100%;
-        gap: 6px;
-        background: var(--color-primary);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+        gap: 42px;
+        background: var(--color-secondary);
+        flex-grow: 1;
 
-        flex: 40%;
-        
-
-        @include tablet {
-          align-items: flex-start;
+        @include desktop-small {
+          flex-direction: column;
+          align-items: center;
           width: 100%;
-          height: 224px;
         }
 
-        .icon{
-          width: 100px;
-          height: auto
-        }
-        .head {
-          @include typography(display-lg, semibold);
-          color: var(--color-white);
-          font-family: var(--secondary-font);
-          
-        }
-  
+        .img_in {
+          overflow: hidden;
+          border-radius: 16px;
+          width: 100%;
 
-        .desc {
-          font-family: var(--secondary-font);
-          @include typography(display-xs, bold);
-          color: var(--color-text-light);
-          text-transform: uppercase;
+          @include desktop-small {
+            width: 100%;
+          }
 
-        }
-
-
-      }
-
-      &:nth-child(1) {
-        .why_choose_contents{
-          flex-direction: column-reverse;
-
-          .head{
-            display: none;
+          img {
+            width: 100%;
+            height: 100%;
           }
         }
-     
-      }
 
-
-      &:nth-child(1),&:nth-child(2) {
-        flex-direction: row;
-
-        @include tablet {
+        .why_choose_content {
+          display: flex;
           flex-direction: column;
+          gap: 83px;
+          justify-content: flex-start;
+          align-items: flex-start;
+          text-align: left;
+          width: 100%;
+
+          @include tablet{
+            gap: 24px;
+          }
+
+          .icon_head{
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            justify-content: flex-start;
+            align-items: flex-start;
+            text-align: left;
+            width: 100%;
+
+            // &:nth-child(2){
+            //   flex-direction: row;
+            // }
+
+            .icon{
+              width: 36px;
+              height: auto
+            }
+            .head {
+              @include typography(display-md, medium);
+              color: var(--color-primary);
+            }
+          }
+        
+        
+          .desc {
+            @include typography(text-lg, normal);
+            color: var(--color-text-light);
+          }
         }
+
       }
 
-      &:nth-child(3),&:nth-child(4){
-        flex-direction: row-reverse;
-        @include tablet{
-          flex-direction: column-reverse;
-        }
+      &:nth-child(2){
+        gap: 0;
 
+        .why_choose_contents {
+          .img_in{
+            height: 406px;
+            @include desktop-small{
+              height: auto;
+            }
+           
+          }
+           
+          .why_choose_content{
+            gap: 42px;
+
+            .icon_head{
+              flex-direction: row;
+              @include desktop-small{
+                flex-direction: column;
+              }
+
+            }
+          }
+        }
           
       }
 
-      &:nth-child(2), &:nth-child(3){
-        .why_choose_contents .desc{
-          color: var(--color-white);
-        }
+      &:nth-child(3){
+        flex-direction: column-reverse;
       }
     }
 
