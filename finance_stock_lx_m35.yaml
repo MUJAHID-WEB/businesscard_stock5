@@ -4,7 +4,7 @@ streams:
      type: ReadOnlyStream
      prefixes:
        '':
-         - 'environment://themes/finance_stock_lx_m35'
+         - 'environment://themes/businesscard_stock5'
          - 'user://themes/base-theme'
 
 enabled: true
