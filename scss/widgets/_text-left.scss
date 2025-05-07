@@ -1,6 +1,6 @@
 .text-left {
-  padding: 120px 0;
-  background: var(--text-bg);
+  padding: 100px 0 60px;
+  background: var(--color-white);
 
   @include desktop-small {
     padding: 40px 0 !important;
@@ -11,15 +11,15 @@
 
   .text-left-container {
     display: flex;
-    flex-direction: row-reverse;
+    // flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
-    gap: 7rem;
-    color: var(--text-text);
+    gap: 2rem;
+    // color: var(--text-text);
 
     @include desktop-small {
-      flex-direction: column-reverse;
-      gap: 28px;
+      flex-direction: column;
+      gap: 34px;
       align-items: center;
     }
 
@@ -55,11 +55,12 @@
     }
 
     .right-section {
-      flex: 50%;
+      // flex: 50%;
       display: flex;
       gap: 1rem;
       align-items: flex-start;
       width: 100%;
+      max-width: 472px;
       position: relative;
 
       img{
@@ -75,8 +76,11 @@
       flex-direction: column;
       justify-content: center;
       align-items: start;
-      gap: 30px;
-      flex: 50%;
+      gap: 24px;
+      // flex: 50%;
+      max-width: 691px;
+      width: 100%;
+
 
       @include desktop-small {
         padding: 0px;
@@ -91,6 +95,8 @@
         align-items: flex-start;
         align-self: stretch;
 
+        max-width: 624px;
+        width: 100%;
         @include desktop-small {
           align-items: start;
         }
@@ -119,6 +125,9 @@
       }
 
       p, li {
+
+        max-width: 555px;
+        width: 100%;
         @include typography(text-lg, regular);
         color: var(--color-text-light);
 
@@ -130,8 +139,17 @@
 
 
       .button {
-        margin-top: 10px;
+        margin-top: 36px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        @include typography(text-md, bold);
+        padding: 16px 28px;
+        color: var(--color-white);
 
+        @include desktop-small {
+          margin-top: 10px;
+        }
       }
 
     }
