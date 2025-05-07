@@ -19,22 +19,6 @@ form:
                   label: Title
                   classes: 'translatable'
 
-                header.module.buttons:
-                  type: list
-                  label: Hero Buttons
-                  style: vertical
-                  fields:
-                    .text.translatable:
-                      type: text
-                      label: Button Text
-                      classes: 'translatable'
-                    .link:
-                      type: text
-                      label: Button Link
-               
-                  
-
-
             header.why_choose_section:
               ordering@: 4
               type: section
