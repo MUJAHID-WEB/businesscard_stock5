@@ -62,4 +62,22 @@
 </script>
 
 <script>
+window.addEventListener('load', () => {
+  const benefits = document.querySelectorAll('.benefits');
+
+  let maxHeight = 0;
+
+  benefits.forEach(el => {
+    el.style.height = 'auto';
+    const height = el.offsetHeight;
+    if (height > maxHeight) {
+      maxHeight = height;
+    }
+  });
+
+  benefits.forEach(el => {
+    el.style.height = maxHeight + 'px';
+  });
+});
+
 </script>

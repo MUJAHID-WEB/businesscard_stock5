@@ -53,17 +53,23 @@
 
     <div class="pricings" id="modular_pricing">
         <div class="container">
-            <h3 class="block-title">{{ page.title|striptags('<span>')|raw  }}</h3>
-            {% if page.content %}
-                <p>{{ page.content|raw }}</p>
-            {% endif %}
-
-            <div class="pricing-sub-title">
-                {% if page.header.sub_title %}
-                    <h5>{{ page.header.sub_title.translatable }}</h5>
-                {% endif %}
-                <img src="{{ url('theme://images/pricing/pricing_image.svg') }}"/>
+            <div class="block-title">
+                <h3>{{ page.title|striptags('<span>')|raw  }}</h3>
+                <p>{{page.header.sub_title.translatable }}</p>
             </div>
+            
+            
+            {# <div class="pricing-sub-title">
+                <h5>{{ page.header.sub_title.translatable }}</h5>
+
+                <div class="avatar-row">
+                    {% for i in 1..6 %}
+                        <div class="avatar-wrapper">
+                            <img src="{{ url('theme://images/pricing/i' ~ i ~ '.svg') }}" alt="Avatar {{ i }}" />
+                        </div>
+                    {% endfor %}
+                </div>
+            </div> #}
             
         </div>
 
