@@ -1,54 +1,61 @@
 {% extends 'partials/variables.html.twig' %}
 
 {% set module = page.header.module %}
-{# {% set image_left = page.media[module.image] %} #}
+{% set image_left = page.media[module.image] %}
 
 {% block render_block %}
     <div class="faqs">
         <div class="container">
 
-            <div class="faq-content">
+            {# <div class="faq-content">
                 {% if module.title %}
-                    {# <h3 class="block-title section-title">{{ module.title.translatable|raw }}</h3> #}
+                    <h3 class="block-title section-title">{{ module.title.translatable|raw }}</h3>
                     <h3 class="block-title">{{ module.title.translatable|striptags('<span>')|raw }}</h3>
                 {% endif %}
 
                 {% if module.sub_title %}
                     <p class="sub-title">{{ module.sub_title.translatable }}</p>
                 {% endif %}
-            </div>
+            </div> #}
         
             <div class="faqs-container">
-                {# <div class="faqs-left">
-                    <div class="faqs-header-section">
-                        {% if module.title %}
+                <div class="faqs-left">
+
+                        <div class="faqs-header-section">
+                            {% if module.title %}
                             <h3 class="block-title">{{ module.title.translatable|raw }}</h3>
-                        {% endif %}
+                            {% endif %}
 
-                        {% if module.sub_title %}
-                            <p class="sub-title">{{ module.sub_title.translatable }}</p>
-                        {% endif %}
+                            {% if module.sub_title %}
+                                <p class="sub-title">{{ module.sub_title.translatable }}</p>
+                            {% endif %}
 
-                        {% if page.content %}
-                            <div class="page-content">
-                                {{ page.content | raw }}
-                            </div>
-                        {% endif %}
-                        {% if module.button %}
-                            <div class="faqs-started-btn">
-                                <a class="button" href="{{ module.button_link }}">{{ module.button.translatable }}
-                                   <img class="faqs-started-btn-icon"
-                                         src="{{ url('theme://images/faq_button_icon.svg') }}" alt="button icon">
-                                </a>
-                            </div>
-                        {% endif %}
-                        {% if image_left %}
-                        <div class="paragraph-image">
-                            <img class="" src="{{ image_left.url }}" alt="icon"/>
+                            {% if page.content %}
+                                <div class="page-content">
+                                    {{ page.content | raw }}
+                                </div>
+                            {% endif %}
+                            {% if module.button %}
+                                <div class="faqs-started-btn">
+                                    <a class="button" href="{{ module.button_link }}">{{ module.button.translatable }}
+                                    <img class="faqs-started-btn-icon"
+                                            src="{{ url('theme://images/faq_button_icon.svg') }}" alt="button icon">
+                                    </a>
+                                </div>
+                            {% endif %}
                         </div>
+
+                        
+                        {% if image_left %}
+                        <img class="left_image" src="{{ image_left.url }}" alt="icon"/>
+                        {# <div class="paragraph-image">
+                            
+                        </div> #}
                         {% endif %}
-                    </div>
-                </div> #}
+                    {# <div class="faqs-header-section">
+                        
+                    </div> #}
+                </div>
 
                 
 

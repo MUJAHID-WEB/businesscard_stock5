@@ -1,6 +1,6 @@
 .faqs {
-  padding: 110px 0;
-  background-color: var(--bg-body);
+  padding: 80px 0 0;
+  background-color: var(--color-secondary);
 
   // background-image: url(../../images/bg_faq.png);
   // background-size: contain;
@@ -65,132 +65,140 @@
 
     .faqs-container {
       display: flex;
-      // flex-direction: column;
-      justify-content: center;
-
-      // gap: 80px;
+      justify-content: space-between;
+      gap: 2rem;
 
 
       @include desktop-small {
         flex-direction: column;
         gap: 48px;
+        align-items: center;
       }
 
-      // .faqs-left {
-      //   flex-basis: 40%;
-      //   color: var(--color-white);
-      //   @include desktop-small {
-      //     flex-basis: 100%;
-      //   }
+      .faqs-left {
+        // flex-basis: 40%;
+        max-width: 427px;
+        // color: var(--color-white);
 
-      //   .faqs-header-section {
-      //     display: flex;
-      //     gap: 30px;
-      //     flex-direction: column;
+        display: flex;
+        gap: 40px;
+        flex-direction: column;
+        justify-content: space-between;
+        @include desktop-small {
+          flex-basis: 100%;
+          .left_image {
+            display: none;
+          }
+        }
 
-      //     @include desktop-small {
-      //       gap: 20px;
-      //     }
-      //     .paragraph-image {
-      //       @include desktop-small {
-      //         display: none;
-      //       }
-      //     }
-      //     .sub-title {
-      //       font-family: var(--secondary-font);
+        .faqs-header-section {
+          display: flex;
+          gap: 24px;
+          flex-direction: column;
 
-      //       @include typography(text-xl, regular);
-      //       @include desktop-small {
-      //         @include typography(text-md, semibold);
-      //       }
-      //     }
+          @include desktop-small {
+            gap: 20px;
+          }
+          
+          .sub-title {
+            // font-family: var(--secondary-font);
 
-      //     .block-title {
+            color: var(--color-text-light);
 
-      //       @include typography(display-lg, semibold);
-      //       //font-family: var(--secondary-font);
-      //       @include desktop-small {
-      //         @include typography(display-md, semibold);
-      //       }
-      //       span {
-      //         color: var(--color-primary);
-      //         font-family: var(--secondary-font);
-      //       }
-      //     }
+            @include typography(text-xl, regular);
+            @include desktop-small {
+              @include typography(text-md, regular);
+            }
+          }
 
-      //     .page-content {
-      //       color: var(--color-tertiary);
-      //       @include typography(text-xl, medium);
+          .block-title {
 
-      //       @include desktop-small {
-      //         @include typography(text-md, medium);
-      //       }
-      //     }
+            @include typography(display-lg, semibold);
+            font-family: var(--secondary-font);
+            color: var(--color-text-dark);
 
-      //     .faqs-started-btn {
-      //       .button {
-      //         width: fit-content;
-      //         display: flex;
-      //         padding: 12px 20px;
-      //         border-radius: 10px;
-      //         background: var(--color-primary);
-      //         color: var(--color-white);
-      //         //position: relative;
-      //         @include typography(text-lg, extra_bold);
-      //         //height: 52px;
-      //         //max-width: 170px;
-      //         //margin-top: 16px;
+            @include desktop-small {
+              @include typography(display-md, semibold);
+            }
+            // span {
+            //   color: var(--color-primary);
+            //   font-family: var(--secondary-font);
+            // }
+          }
 
-      //         @include desktop-small {
-      //           padding: 12px 16px 12px 12.128px;
-      //           //width: 154px;
-      //           //height: 44px;
-      //           //margin-top: 4px;
-      //         }
-      //       }
+          .page-content {
+            color: var(--color-tertiary);
+            @include typography(text-xl, medium);
 
-      //       .faqs-started-btn-icon {
-      //         position: absolute;
-      //         width: 52px;
-      //         right: -30px;
+            @include desktop-small {
+              @include typography(text-md, medium);
+            }
+          }
 
-      //         @include desktop-small{
-      //           width: 44px;
-      //         }
-      //       }
-      //     }
-      //   }
-      // }
+          .faqs-started-btn {
+            .button {
+              width: fit-content;
+              display: flex;
+              padding: 12px 20px;
+              border-radius: 10px;
+              background: var(--color-primary);
+              color: var(--color-white);
+              //position: relative;
+              @include typography(text-lg, extra_bold);
+              //height: 52px;
+              //max-width: 170px;
+              //margin-top: 16px;
+
+              @include desktop-small {
+                padding: 12px 16px 12px 12.128px;
+                //width: 154px;
+                //height: 44px;
+                //margin-top: 4px;
+              }
+            }
+
+            .faqs-started-btn-icon {
+              position: absolute;
+              width: 52px;
+              right: -30px;
+
+              @include desktop-small{
+                width: 44px;
+              }
+            }
+          }
+        }
+      }
 
       .faqs-items {
         // flex-basis: 54%;
         align-items: center;
-        max-width: 850px;
+        max-width: 671px;
         width: 100%;
         display: flex;
         flex-direction: column;
-        gap: 20px;
         // gap: 20px;
-        // @include desktop-small {
-        //   flex-basis: 100%;
-        // }
+        padding-bottom: 80px;
+
+        @include desktop-small {
+          padding-bottom: 0;
+        }
 
 
         .faq-accordion-item {
           display: flex;
           flex-direction: column;
-          gap: 1rem;
+          gap: 20px;
           width: 100%;
-          padding: 20px;
-          background: var(--color-white);
-          border-radius: 20px;
-          box-shadow: 0px 4px 18.3px 0px rgba(0, 0, 0, 0.12);
-          //  border-bottom: 1px solid var(--color-white);
+          padding: 20px 0;
+          // background: var(--color-white);
+          // border-radius: 20px;
+          // box-shadow: 0px 4px 18.3px 0px rgba(0, 0, 0, 0.12);
+          border-top: 1px solid var(--color-text-dark);
 
-          //  &:first-child {
-          //    border-top: 1px solid var(--color-white);
-          //    border-bottom: 1px solid var(--color-white);
-          //  }
+           &:last-child {
+             border-bottom: 1px solid var(--color-text-dark);
+           }
 
           // @include desktop-small {
           //   border-bottom: 1px solid var(--color-white);
@@ -204,7 +212,7 @@
 
           .faq-accordion-header {
             display: flex;
-            flex-direction: row-reverse;
+            // flex-direction: row-reverse;
             gap: 30px;
             cursor: pointer;
 
@@ -213,11 +221,11 @@
               flex: 1;
               border: none;
               background-color: transparent;
-              color: var(--color-text-light);
+              color: var(--color-text-dark);
               text-align: left;
-              @include typography(display-xs, semibold);
+              @include typography(text-xl, bold);
               cursor: pointer;
-              font-family: var(--secondary-font);
+              // font-family: var(--secondary-font);
 
               @include desktop-small {
                 @include typography(text-lg, bold);
@@ -225,21 +233,22 @@
             }
 
             .opened {
-              color: var(--color-primary) !important;
+              // color: var(--color-primary) !important;
+              color: var(--color-text-dark) !important;
             }
           }
 
           .faq-accordion-body {
             overflow: hidden;
             transition: height 3s ease;
-            padding-bottom: 20px;
-            @include typography(text-lg, regular);
+            padding-bottom: 4px;
+            @include typography(text-md, regular);
             color: var(--color-text-light);
-            padding-left: 54px;
+            // padding-left: 54px;
             // font-family: var(--secondary-font);
 
             @include desktop-small {
-              @include typography(text-sm, regular);
+              padding-bottom: 0;
             }
           }
 
