@@ -1,0 +1,65 @@
+{% set max_width = 'max-w-7xl mx-auto w-full' %}
+{% set section_padding = 'px-4 sm:px-6 lg:px-8' %}
+{% set site_js = 'user://themes/metricalo-base/dist/js/main.js?v=3' %}
+{% set data = config.data %}
+{% block render_block %}{% endblock %}
+
+<link href="{{ url('theme://assets/css/owl.carousel.min.css') }}" rel="stylesheet" />
+{% do assets.addJs('theme://assets/js/animation.js', {group: 'bottom', loading: 'defer'}) %}
+{% do assets.addJs('theme://assets/js/owl.carousel.min.js', {group: 'bottom', loading: 'defer'}) %}
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+
+        //FAQ accordion
+        const accordionButtons = document.querySelectorAll(".faq-accordion-header");
+
+        accordionButtons.forEach((button) => {
+            button.addEventListener("click", function ()  {
+                const targetId = button.getAttribute("data-target");
+                const body = document.querySelector(targetId);
+                const parentItem = button.closest(".faq-accordion-item");
+                const upIcon = parentItem.querySelector(".faq-accordion-up-btn");
+
+                const openHeader = parentItem.querySelector(".faq-accordion-btn");
+                
+                const downIcon = parentItem.querySelector(".faq-accordion-down-btn");
+
+
+                const isOpen = !body.classList.contains("d-none");
+
+                if (isOpen) {
+                    setTimeout(() => {
+                        body.style.height = 0 + "px";
+                    }, 10);
+
+                    setTimeout(() => {
+                        body.classList.add("d-none");
+                    }, 15);
+
+                    upIcon.classList.add("d-none"); 
+                    downIcon.classList.remove("d-none");
+
+                    openHeader.classList.remove("opened");
+                } else {
+                    setTimeout(() => {
+                        body.style.height = 100 + "%";
+                    }, 10);
+
+                    setTimeout(() => {
+                        body.classList.remove("d-none");
+                    }, 15);
+
+                    upIcon.classList.remove("d-none");
+                    downIcon.classList.add("d-none");
+                    
+                    openHeader.classList.add("opened");
+                }
+            });
+        });
+    });
+</script>
+
+<script>
+</script>

@@ -1,0 +1,123 @@
+.feature-section {
+  padding: 60px 0;
+  background: var(--color-tertiary);
+
+  @include desktop-small {
+    padding: 40px 0;
+
+  }
+
+    .feature-wrapper {
+      display: flex;
+      flex-direction: column;
+
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+
+      .features-header-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 2rem;
+        width: 70%;
+
+        @include desktop-small {
+          width: 100%;
+        }
+
+        .title {
+          @include typography('display-lg', 'semibold');
+        }
+
+        .description {
+          p {
+            @include typography('text-xl', 'medium');
+          }
+        }
+      }
+
+      .features-content-wrapper {
+        display: flex;
+        gap: 25px;
+        flex-wrap: wrap;
+
+        @include desktop-small {
+          flex-direction: column;
+          gap: 1rem;
+          flex-wrap: nowrap;
+        }
+
+        .feature-item {
+          background: #F6F9F8;
+          border-radius: 20px;
+          border: 1px solid #D7D7D7;
+          transition: 1s ease-in-out;
+          width: 32%;
+
+          @include desktop-xl {
+            width: 100%;
+          }
+
+          @include desktop-lg {
+            width: 100%;
+          }
+
+          @include desktop-small {
+            width: 100%;
+          }
+
+          .feature-image {
+            padding: 2rem;
+          }
+
+          hr {
+            border-bottom: 1px solid #818181;
+          }
+
+          .feature-content {
+            padding: 2rem;
+
+            .feature-title {
+              @include typography('display-sm', 'semibold');
+              margin-bottom: 1rem;
+            }
+
+            .feature-description {
+              @include typography('text-md', 'regular');
+            }
+          }
+
+          &:hover {
+            background: #15301F;
+            color: var(--color-white);
+          }
+        }
+      }
+
+      .actions {
+        .feature-btn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          padding: 12px 24px;
+          background: var(--color-secondary);
+          border-radius: 30px;
+          @include typography('text-lg', 'semibold');
+          border: none;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+}
+
+.second-row-item-hide {
+  display: none;
+}

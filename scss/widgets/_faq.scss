@@ -1,0 +1,258 @@
+.faqs {
+  padding: 110px 0;
+  background-color: var(--bg-body);
+
+  // background-image: url(../../images/bg_faq.png);
+  // background-size: contain;
+  // background-position: bottom;
+  // background-repeat: no-repeat;
+
+  @include desktop-small {
+    padding: 40px 0;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    @include tablet {
+      gap: 24px;
+    }
+
+
+    .faq-content {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      align-items: center;
+
+      .block-title {
+        max-width: 660px;
+        text-align: center;
+        color: var(--color-text-light);
+        @include typography(display-lg, semibold);
+        font-family: var(--secondary-font);
+
+        @include desktop-small {
+          @include typography(display-sm, semibold);
+        }
+
+        span {
+          color: var(--color-primary);
+          @include typography(display-lg, semibold);
+          font-family: var(--secondary-font);
+
+          @include desktop-small {
+            @include typography(display-sm, semibold);
+          }
+
+        }
+      }
+
+      .sub-title {
+        max-width: 660px;
+        text-align: center;
+        color: var(--color-text-light);
+        @include typography(text-xl, regular);
+
+        @include desktop-small {
+          @include typography(text-lg, regular);
+        }
+      }
+
+    }
+
+    .faqs-container {
+      display: flex;
+      // flex-direction: column;
+      justify-content: center;
+
+      // gap: 80px;
+
+
+      @include desktop-small {
+        flex-direction: column;
+        gap: 48px;
+      }
+
+      // .faqs-left {
+      //   flex-basis: 40%;
+      //   color: var(--color-white);
+      //   @include desktop-small {
+      //     flex-basis: 100%;
+      //   }
+
+      //   .faqs-header-section {
+      //     display: flex;
+      //     gap: 30px;
+      //     flex-direction: column;
+
+      //     @include desktop-small {
+      //       gap: 20px;
+      //     }
+      //     .paragraph-image {
+      //       @include desktop-small {
+      //         display: none;
+      //       }
+      //     }
+      //     .sub-title {
+      //       font-family: var(--secondary-font);
+
+      //       @include typography(text-xl, regular);
+      //       @include desktop-small {
+      //         @include typography(text-md, semibold);
+      //       }
+      //     }
+
+      //     .block-title {
+
+      //       @include typography(display-lg, semibold);
+      //       //font-family: var(--secondary-font);
+      //       @include desktop-small {
+      //         @include typography(display-md, semibold);
+      //       }
+      //       span {
+      //         color: var(--color-primary);
+      //         font-family: var(--secondary-font);
+      //       }
+      //     }
+
+      //     .page-content {
+      //       color: var(--color-tertiary);
+      //       @include typography(text-xl, medium);
+
+      //       @include desktop-small {
+      //         @include typography(text-md, medium);
+      //       }
+      //     }
+
+      //     .faqs-started-btn {
+      //       .button {
+      //         width: fit-content;
+      //         display: flex;
+      //         padding: 12px 20px;
+      //         border-radius: 10px;
+      //         background: var(--color-primary);
+      //         color: var(--color-white);
+      //         //position: relative;
+      //         @include typography(text-lg, extra_bold);
+      //         //height: 52px;
+      //         //max-width: 170px;
+      //         //margin-top: 16px;
+
+      //         @include desktop-small {
+      //           padding: 12px 16px 12px 12.128px;
+      //           //width: 154px;
+      //           //height: 44px;
+      //           //margin-top: 4px;
+      //         }
+      //       }
+
+      //       .faqs-started-btn-icon {
+      //         position: absolute;
+      //         width: 52px;
+      //         right: -30px;
+
+      //         @include desktop-small{
+      //           width: 44px;
+      //         }
+      //       }
+      //     }
+      //   }
+      // }
+
+      .faqs-items {
+        // flex-basis: 54%;
+        align-items: center;
+        max-width: 850px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        // gap: 20px;
+        // @include desktop-small {
+        //   flex-basis: 100%;
+        // }
+
+
+        .faq-accordion-item {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          width: 100%;
+          padding: 20px;
+          background: var(--color-white);
+          border-radius: 20px;
+          box-shadow: 0px 4px 18.3px 0px rgba(0, 0, 0, 0.12);
+          //  border-bottom: 1px solid var(--color-white);
+
+          //  &:first-child {
+          //    border-top: 1px solid var(--color-white);
+          //    border-bottom: 1px solid var(--color-white);
+          //  }
+
+          // @include desktop-small {
+          //   border-bottom: 1px solid var(--color-white);
+
+          //   &:first-child {
+          //     border-top: 1px solid var(--color-white);
+          //     border-bottom: 1px solid var(--color-white);
+          //   }
+
+          // }
+
+          .faq-accordion-header {
+            display: flex;
+            flex-direction: row-reverse;
+            gap: 30px;
+            cursor: pointer;
+
+
+            .faq-accordion-btn {
+              flex: 1;
+              border: none;
+              background-color: transparent;
+              color: var(--color-text-light);
+              text-align: left;
+              @include typography(display-xs, semibold);
+              cursor: pointer;
+              font-family: var(--secondary-font);
+
+              @include desktop-small {
+                @include typography(text-lg, bold);
+              }
+            }
+
+            .opened {
+              color: var(--color-primary) !important;
+            }
+          }
+
+          .faq-accordion-body {
+            overflow: hidden;
+            transition: height 3s ease;
+            padding-bottom: 20px;
+            @include typography(text-lg, regular);
+            color: var(--color-text-light);
+            padding-left: 54px;
+            // font-family: var(--secondary-font);
+
+            @include desktop-small {
+              @include typography(text-sm, regular);
+            }
+          }
+
+          .d-none {
+            display: none;
+          }
+
+          .d-block {
+            display: block;
+          }
+        }
+      }
+    }
+
+  }
+}

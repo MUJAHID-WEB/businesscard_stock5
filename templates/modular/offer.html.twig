@@ -1,0 +1,52 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.offer %}
+{% block render_block %}
+	{% set left = page.media[page.header.offer.offer_img_left].url ?? '' %}
+
+	{% set left_bg = page.media[page.header.offer.offer_img_bg].url ?? '' %}
+	<div class="offer {{ module.offer_parent_class }}" style="{% if(left_bg) %}background-image: url('{{ left_bg }}'){% endif %}">
+		<div class="container">
+			<div class="offer-text">
+
+				{% if left != '' %}
+				
+
+					<div class="offer-image" >
+						<img class="" src="{{ left }}" alt="icon"/>
+
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="129" height="129" viewBox="0 0 129 129" fill="none">
+<rect y="32.8525" width="100.989" height="100.989" transform="rotate(-18.9842 0 32.8525)" fill="url(#pattern0_99_2938)"/>
+<defs>
+<pattern id="pattern0_99_2938" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_99_2938" transform="scale(0.00666667)"/>
+</pattern>
+<image id="image0_99_2938" width="150" height="150" preserveAspectRatio="none" xlink:href="data:image/png;base64,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"/>
+</defs>
+</svg>
+					</div>
+				{% endif %}
+
+				<div class="offer-content"> 
+					<h1 class="offer-title">
+						{{ module.h1.translatable|striptags('<span>')|raw }}
+					</h1>
+
+					<p class="">{{ module.text.translatable }}</p>
+
+					{% for button in module.buttons  %}
+						<a class="button " href="{{ button.link }}">
+
+							<span>{{ button.text.translatable|striptags('</br>')|raw }}</span>
+							
+						</a>
+					{% endfor %}
+
+				</div>
+
+				
+			</div>
+
+		</div>
+	</div>
+{% endblock %}

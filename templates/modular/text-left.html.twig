@@ -1,0 +1,40 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.text_left %}
+{% set image = page.media[page.header.text_left.image] %}
+{% set features = page.header.text_left_features %}
+
+{% block render_block %}
+<div class="paragraph text-left text-left-animation {{ module.classes }}">
+    <div class="container">
+        <div class="text-left-container">
+            <div class="right-section">
+                <img class="" src="{{ image.url }}" alt="icon"/>
+              
+
+            </div>
+
+            <div class="text-left-text">
+                {% if module.subtitle is not empty %}
+                <div class="sub-title">
+                    <h4>{{ module.subtitle.translatable|striptags('<span>')|raw }}</h4>
+                </div>
+                {% endif %}
+                <div class="block-title">
+                    <h3>{{ module.title.translatable|striptags('<span>')|raw }}</h3>
+                </div>
+                <p>{{ page.content|striptags('<span>')|raw }}</p>
+
+               {% if module.buttons %}
+                    {% for button in module.buttons  %}
+                        <a class="button" href="{{ button.link }}">
+                            {{ button.text.translatable }}
+
+                        </a>
+                    {% endfor %}
+                {% endif %} 
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

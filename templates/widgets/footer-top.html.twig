@@ -1,0 +1,60 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.find('/home').header.footer %}
+{% block render_block %}
+
+
+	<div class="footer_top" >
+		<div class="container">
+			<div class="footer_container">
+				<div class="top_right">
+					<div class="right_column">
+						<div class="count_card">
+							<h4>{{ module.top_count.translatable }}</h4>
+
+							<p>{{ module.top_count_text.translatable }}</p>
+						</div>
+
+						<div class="trans_card">
+							{# <img  src="{{ page.media[module.top__right_users_img].url }}" alt="Users Image" /> #}
+							<img src="{{ url('theme://images/footer/footer_users.png') }}" />
+
+							<h4>{{ module.top_users_title.translatable }}</h4>
+
+							<p>{{ module.top_approve_date.translatable }}</p>
+						</div>
+					</div>
+					<div class="right_row">
+						{# <img  src="{{ page.media[module.top__right_img].url }}" alt=" Image" /> #}
+						<img src="{{ url('theme://images/footer/footer_right.png') }}" />
+					</div>
+
+				</div>
+
+				<div class="top_left"> 
+					<h3>
+						{{ module.top_title.translatable }}
+					</h3>
+
+					<h5 class="">{{ module.top_subtitle.translatable }}</h5>
+
+					<p>{{ module.text.translatable }}</p>
+
+					{% for button in module.buttons  %}
+						<a class="button " href="{{ button.link }}">
+
+						{{ button.text.translatable|striptags('</br>')|raw }}
+							
+						</a>
+					{% endfor %}
+
+				</div>
+			</div>
+		
+
+				
+			
+
+		</div>
+	</div>
+{% endblock %}

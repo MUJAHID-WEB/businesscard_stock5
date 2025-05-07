@@ -1,0 +1,488 @@
+.footer-section {
+  overflow: hidden;
+  background: rgba(10, 92, 215, 0.05);
+  display: flex;
+  padding: 4rem 0 4rem 0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  align-self: stretch;
+
+  // background-image: url(../../images/footer-shape.png), url(../../images/footer-watermark.png);
+  // background-repeat: no-repeat;
+  // background-size: cover, contain;
+  // background-position: top left, bottom left;
+
+  @include tablet {
+    padding: 20px 0;
+    background: unset;
+    gap: 44px;
+  }
+
+  .footer-logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 72px;
+
+    @include desktop-small {
+      flex-direction: column;
+    }
+
+
+    .logo-container {
+      padding: 0;
+      justify-content: start;
+      align-items: start;
+      background: transparent !important;
+    }
+
+    .title {
+      // font-family: var(--default-font-2);
+      @include typography(display-xs, bold);
+      color: var(--color-text-dark);
+
+      @include desktop-small {
+        @include typography(text-xl, medium);
+      }
+    }
+
+    .flexcontainer {
+      margin-top: 16px;
+    }
+
+    p {
+      @include typography(text-xl, regular);
+
+      @include desktop-small {
+        @include typography(text-md, semibold);
+      }
+
+      padding: 6px 0;
+      color: var(--color-text-dark);
+    }
+
+    a {
+      color: var(--color-text-dark);
+      text-decoration: none;
+      @include typography(text-lg, bold);
+
+      @include desktop-small {
+        @include typography(text-md, bold);
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+
+    .footer-logo-top {
+      display: flex;
+      justify-content: space-between;
+      align-self: stretch;
+
+      @include desktop-small {
+        flex-direction: column;
+        align-items: start;
+        gap: 40px;
+      }
+
+
+      .footer-contact-wrapper {
+        width: 50%;
+        display: flex;
+        // flex-direction: column;
+        gap: 6rem;
+
+        @include desktop-small {
+          width: 100%;
+          flex-direction: column;
+          gap: 40px;
+        }
+
+        .footer-contact {
+
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.625rem;
+
+          p,
+          a {
+            @include typography(text-lg, bold);
+
+            @include desktop-small {
+              @include typography(text-md, regular);
+            }
+
+            color: var(--color-text-dark);
+          }
+
+          a {
+            span {
+              @include typography(text-lg, regular);
+            }
+          }
+        }
+
+      }
+
+
+
+      .logo {
+        max-width: 283px;
+        height: auto;
+      }
+
+      .footer-logo-area {
+        flex-basis: 32%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-self: stretch;
+        gap: 20px;
+
+        @include desktop-small {
+          gap: 20px;
+        }
+
+        .branding-text {
+          @include typography(text-xl, regular);
+          margin-bottom: 10px;
+
+          // @include desktop-small {
+          //   @include typography(text-xl, regular);
+          // }
+        }
+      }
+
+      .footer-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4375rem;
+
+        .menu-item {
+          display: flex;
+          padding: 6px 0;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 0.625rem;
+          @include typography(text-lg, regular);
+
+          @include desktop-small {
+            @include typography(text-md, regular);
+          }
+
+          color: var(--color-text-dark);
+
+
+          &:nth-child(4), &:nth-child(5), &:nth-child(6){
+            display:none
+          }
+        }
+      }
+    }
+
+    .footer-cards {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: flex-start;
+      justify-content: left;
+      gap: 2rem;
+
+      @include desktop-small {
+        width: 100%;
+      }
+
+      img {
+        width: 60px;
+      }
+    }
+  }
+
+  .footer-bottom {
+    border-top: 1px solid var(--color-gray);
+    width: 100%;
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      // flex-direction: column;
+      gap: 0.625rem;
+      align-self: stretch;
+      // background: var(--panel-footer-bg);    
+      padding-top: 44px;
+
+
+
+      @include tablet {
+        margin-top: 0;
+        padding-top: 30px;
+        flex-direction: column-reverse;
+        gap: 40px;
+      }
+
+      p {
+        color: var(--color-text-dark);
+        @include typography(text-md, bold);
+
+        @include desktop-small {
+          @include typography(text-sm, bold);
+        }
+
+        text-align: center;
+
+      }
+
+      .policy-pages-link-area {
+
+        display: flex;
+
+        @include tablet {
+          flex-direction: column;
+          gap: 9px;
+
+        }
+
+        .copyright-link {
+          border-right: 1px solid var(--color-text-dark);
+          padding: 10px 40px;
+          color: var(--color-text-dark);
+          text-decoration: none;
+          @include typography(text-md, bold);
+
+          // &:nth-child(odd) {
+          //   border-right: none;
+          //   padding-right: 0;
+          //   padding-left: 60px;
+
+          // }
+
+          &:last-child {
+            border-right: none;
+            padding-right: 0;
+            // padding-left: 60px;
+
+          }
+
+          @include tablet {
+            @include typography(text-md, bold);
+            padding: 0;
+            border-right: none;
+
+          }
+        }
+      }
+
+    }
+  }
+
+}
+
+.copyright-desktop-view {
+
+  .footer-cards {
+    margin-bottom: 40px;
+
+    @include desktop-small {
+      margin-bottom: 0;
+    }
+
+  }
+}
+
+
+
+.footer_top {
+  background: linear-gradient(to top,
+      rgba(10, 92, 215, 0.05) 50%,
+      rgba(10, 92, 215, 0) 50%);
+
+
+  @include tablet {
+    background: unset;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .footer_container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 60px;
+      border-radius: 26px;
+      background: linear-gradient(180deg, #045EC9 0%, #071216 100%);
+      padding: 65px 60px;
+      max-width: 1216px;
+
+      @include desktop-small {
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      @include tablet {
+        padding: 24px 12px;
+      }
+
+      .top_right {
+        display: flex;
+        flex: 1;
+        justify-content: start;
+        align-items: stretch;
+        gap: 10px;
+
+        .right_column {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: stretch;
+          gap: 10px;
+
+          .count_card {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: start;
+            gap: 10px;
+            color: var(--color-text-dark);
+            border-radius: 20px;
+            background: var(--color-white);
+            padding: 24px 12px;
+
+            @include tablet {
+              padding: 8px;
+              gap: 2px;
+            }
+
+
+            h4 {
+              font-family: var(--secondary-font);
+              @include typography(display-sm, bold);
+
+              @include tablet {
+                @include typography(text-xl, extra_bold);
+              }
+            }
+
+            p {
+              @include typography(text-sm, regular);
+
+              @include tablet {
+                font-size: 8px;
+                line-height: 12px;
+              }
+            }
+          }
+
+          .trans_card {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 4px;
+            padding: 30px 12px;
+            color: var(--color-text-dark);
+            border-radius: 20px;
+            background: var(--color-white);
+
+            @include tablet {
+              padding: 6px 8px;
+              gap: 2px;
+            }
+
+            img {
+              margin-bottom: 24px;
+              width: 100%;
+
+              @include tablet {
+                margin-bottom: 18px;
+              }
+            }
+
+            h4 {
+              @include typography(text-md, bold);
+
+              @include tablet {
+                @include typography(text-sm, bold);
+              }
+            }
+
+            p {
+              @include typography(text-sm, regular);
+
+              @include tablet {
+                font-size: 8px;
+                line-height: 12px;
+              }
+            }
+          }
+        }
+
+        .right_row {
+          max-width: 235px;
+          height: 310px;
+
+          @include tablet {
+            height: 173px;
+          }
+
+          img {
+            width: 100%;
+            height: -webkit-fill-available;
+          }
+        }
+      }
+
+      .top_left {
+        display: flex;
+        flex: 1.2;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 20px;
+        color: var(--color-white);
+
+        h3 {
+          font-family: var(--secondary-font);
+          @include typography(display-md, bold);
+
+          @include tablet {
+            @include typography(display-sm, bold);
+          }
+        }
+
+        h5 {
+          margin-bottom: -20px;
+          @include typography(text-lg, bold);
+
+          @include tablet {
+            @include typography(text-md, regular);
+          }
+        }
+
+        p {
+          @include typography(text-lg, regular);
+
+          @include tablet {
+            @include typography(text-md, regular);
+          }
+        }
+
+        .button {
+          margin-top: 14px;
+
+        }
+
+      }
+    }
+  }
+
+
+}

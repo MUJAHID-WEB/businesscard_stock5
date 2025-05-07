@@ -1,0 +1,70 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.hero %}
+{% block render_block %}
+	{% set image = page.media[page.header.hero.image] %}
+	{% set left_image = page.media[page.header.hero.left_image] %}
+
+	{% set bg = page.media[page.header.hero.hero_bg].url ?? '' %}
+		<div class="hero {{ module.size == 'medium' ? 'medium' : '' }}" style="{% if(bg) %}background-image: url('{{ bg }}'){% endif %}">
+			<div class="container hero-container {{ module.classes }}">
+
+				<div class="hero-text {{ module.classes == 'text_image_center' ? 'hero_text_center' : 'hero_text_left' }}">
+					{# <div class="hero_subtitle">
+						<img src="{{ url('theme://images/wave_hand.svg') }}"/>
+
+						<p class="hero-title">
+						{{ module.subtitle.translatable|striptags('<span>')|raw }}
+					</p>
+					</div> #}
+					
+					<h1 class="hero-title">
+						{{ module.h1.translatable|striptags('<span>')|raw }}
+					</h1>
+					{# <div class="hero-image hidden-on-lg"><img class="zoom-in-image" src="{{ image.url }}" alt="icon"/></div> #}
+					<p class="">{{ module.text.translatable }}</p>
+
+					<div class="hero_buttons">
+						{% for button in module.buttons  %}
+					
+						<a class="button " href="{{ button.link }}">
+							<span>{{ button.text.translatable }}</span>
+				
+						</a>
+						{% endfor %}
+					</div>
+					
+				</div>
+
+				{% if image != '' %}
+				{% set left_bg = page.media[page.header.hero.left_image_bg].url ?? '' %}
+
+					<div class="hero-image flex-on-lg" style="{% if(left_bg) %}background-image: url('{{ left_bg }}'){% endif %}">
+
+						<img class="" src="{{ image.url }}" alt="icon"/>
+
+						{# <div class="image-left-top">
+							
+
+							<p>Eco- Friendly</p>
+						</div>
+
+
+						<div class="image-right-center">
+							
+							<p>Cost-Effective</p>
+						</div>
+
+						<div class="image-bottom-left">
+						
+
+							<p>Customizable</p>
+						</div> #}
+					</div>
+					
+				{% endif %}
+
+			</div>
+		</div>
+
+{% endblock %}

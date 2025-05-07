@@ -1,0 +1,36 @@
+<div
+	class="cheeseburger-menu" id="cheeseburger-menu">
+	{# <div class="cheeseburger-menu__close" id="cheeseburger-menu-close">
+		        <span></span>
+		    </div> #}
+	<div class="cheeseburger-menu__menu">
+	{% for page in pages.children.visible %}
+		{% if (page.home and not grav.user.authenticated) or (not page.home) %}
+			{% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
+			{% set requires_access = page.header.login ? page.header.login.visibility_requires_access : false %}
+
+			{% if (requires_access == true and page.header.access['site.login'] and grav.user.authorized == true) or requires_access == false %}
+				<div class="menu-item {{ current_page|e }}">
+					<a class="menu-item__link" href="{{ page.url|e }}">
+						{{ page.menu|e }}
+					</a>
+				</div>
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+	</div>
+	<div class="cheeseburger-menu__menu">
+		{% if grav.user.authenticated %}
+			<div class="menu-item">
+				<a class="menu-item__link  button" href="{{ url('/task:login.logout') }}">{{ "METRICALO.LOGOUT"|t }}</a>
+			</div>
+		{% else %}
+			<div class="menu-item">
+				<a class="menu-item__link  btn button login" href="{{ url('/login') }}">{{ "METRICALO.LOGIN"|t }}</a>
+			</div>
+			<div class="menu-item">
+				<a class="menu-item__link  button btn signup" href="{{ home_url|e }}{{ webdata('signup_url') }}">{{ "METRICALO.SIGNUP"|t }}</a>
+			</div>
+		{% endif %}
+	</div>
+</div>

@@ -1,0 +1,56 @@
+{% extends 'partials/variables.html.twig' %}
+{% set module = page.header.modules %}
+{% set contents = page.header.contents %}
+{% set image_left = page.media[module.image] %}
+{# {% set image_bottom_left = page.media[module.image_bottom_left] %} #}
+
+
+
+{% set module = page.header.modules %}
+{% set contents = page.header.contents %}
+
+{% block render_block %}
+
+    {# {% include 'partials/no-hero-header.html.twig' with {
+        'title': page.header.title,
+        'links': [
+            {
+                'url': '/' ~ grav.language.getActive,
+                'title': "METRICALO.HOME"|t
+            },
+            {
+                'title': page.header.title|t
+
+            }
+        ]
+    } %} #}
+    
+    <section class="contact-block-section {{ module.classes }}">
+        
+
+        <div class="container">
+            <div class="contact-block-wrapper">
+               
+                <div class="contact-block-content-parent">
+                    <div class="contact-content">
+                     
+                        <h1>{{ module.title.translatable|striptags('<span>')|raw }}</h1>
+                        <p>{{ module.sub_title.translatable|striptags('<span>')|raw }}</p>
+                    </div>
+                    <div class="contact-form">
+                        {% include 'forms/form.html.twig' with {form: forms('contact-us'), action: '#'} %}
+                    </div>
+                </div>
+
+                 <div class="contact-left">
+                    {% include 'widgets/contact-section.html.twig' %}
+   
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+{% endblock %}

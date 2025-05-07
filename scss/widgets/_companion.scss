@@ -1,0 +1,241 @@
+.companion-wrapper {
+  padding-top: 100px;
+  padding-bottom: 0;
+  background: linear-gradient(to top, rgba(10, 92, 215, 0.05) 30%, rgba(10, 92, 215, 0) 30%);
+
+  @include desktop-small {
+    padding: 40px 0 13px;
+    background: unset;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+
+    @include desktop-small {
+      gap: 40px;
+    }
+
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      text-align: center;
+
+      @include desktop-small {
+        align-items: start;
+        justify-content: start;
+        text-align: left;
+        gap: 20px;
+      }
+
+      h3 {
+        font-family: var(--secondary-font);
+        @include typography(display-lg, semibold);
+        color: var(--color-text-dark);
+        max-width: 766px;
+
+        @include desktop-small {
+          @include typography(display-sm, semibold);
+          max-width: 100%;
+        }
+      }
+
+      p {
+        @include typography(text-lg, regular);
+        color: var(--color-text-light);
+        max-width: 954px;
+
+        @include desktop-small {
+          @include typography(text-md, regular);
+          max-width: 100%;
+        }
+      }
+    }
+
+    .contents-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 85px;
+      width: 100%;
+
+      @include desktop-small {
+        gap: 34px;
+      }
+
+      .tab-wrapper {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        justify-content: space-between;
+        gap: 20px;
+
+        .tab-content {
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          justify-content: start;
+          gap: 14px;
+          padding-bottom: 17px;
+          border-bottom: 3px solid var(--color-gray);
+          width: calc(24% - 10px);
+
+          @include desktop-small{
+            width: calc(50% - 10px);
+          }
+
+          &.active {
+            border-bottom: 3px solid var(--color-primary);
+            h5{
+              color: var(--color-primary);
+            }
+          }
+
+          p {
+            @include typography(text-lg, bold);
+            color: var(--color-gray);
+
+          }
+
+          h5 {
+            @include typography(text-xl, bold);
+            color: var(--color-text-dark);
+
+            @include desktop-small {
+              @include typography(text-lg, bold);
+              max-width: 100%;
+            }
+          }
+        }
+      }
+
+      .listing-contents {
+        background: var(--color-secondary);
+        padding: 50px;
+        border-radius: 24px;
+        width: 100%;
+
+        @include desktop-small{
+          padding: 24px 14px;
+        }
+
+
+        .listing-content-container {
+          display: none; 
+
+          &.active {
+            display: flex; 
+            align-items: flex-start;
+            gap: 100px;
+            flex: 1;
+
+          @include desktop-small {
+            flex-direction: column;
+            gap: 24px;
+          }
+
+          .companion-image {
+            display: flex;
+            flex: 1;
+
+            img {
+              width: 100%;
+            }
+          }
+
+          .listing-content {
+            display: flex;
+            flex: 1.2;
+            flex-direction: column;
+            gap: 14px;
+
+
+
+            .tab_count {
+              margin-top: 0;
+                margin-bottom: 0;
+              @include typography(display-xs, semibold);
+              color: var(--color-primary);
+            }
+
+            .listing-title {
+              color: var(--color-text-dark);
+              font-family: var(--secondary-font);
+              @include typography(display-sm, semibold);
+
+              @include desktop-small{
+                @include typography(display-xs, semibold);
+              }
+            }
+
+            p {
+              color: var(--color-text-light);
+              @include typography(text-lg, regular);
+              margin-top: 10px;
+              margin-bottom: 40px;
+              width: 100%;
+
+              @include desktop-small {
+                @include typography(text-md, regular);
+                margin-top: 2px;
+                margin-bottom: 8px;
+              }
+
+              
+            }
+
+            .card-content {
+              display: flex;
+              flex-direction: row;
+              gap: 11px;
+
+              @include desktop-small{
+                align-items: center;
+              }
+
+
+              .card-image {
+                width: 24px;
+                height: 24px
+              }
+
+              .card-desc {
+                margin-top: 0;
+                margin-bottom: 0;
+                color: var(--color-text-light);
+                @include typography(text-md, regular);
+              }
+            }
+
+            .button {
+
+              align-self: flex-start;
+              display: flex;
+
+              @include desktop-small{
+                margin-top: 20px;
+              }
+
+            }
+
+          }
+
+        }
+
+      }
+
+      }
+
+    }
+  }
+
+
+}

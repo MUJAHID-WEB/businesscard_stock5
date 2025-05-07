@@ -1,0 +1,27 @@
+
+<div class="header-buttons {{ login_order }}">
+	{% if grav.user.authenticated %}
+		<a class="btn {{navbar_button_style}}" href="{{ url('/task:login.logout') }}">{{ "METRICALO.LOGOUT"|t }}</a>
+	{% else %}
+		<a class="btn active-btn {{navbar_button_style}}" href="{{ url('/login') }}">{{ "METRICALO.LOGIN"|t }}</a>
+		<a class="{{navbar_button_style}} btn signup" href="{{ home_url|e }}{{ webdata('signup_url') }}">
+			<span>{{ "METRICALO.SIGNUP"|t }}</span>
+
+		
+		</a>
+	{% endif %}
+	{% if grav.language.enabled and grav.language.languages|count > 1 %}
+		<span class="language-switcher" data-current-lang="{{ grav.language.active }}" id="open-modal">
+		
+		<img class="frame-29 lang-flag" src="{{ url('theme://images/lang/'~grav.language.active~'.svg') }}">
+			{{ grav.language.active|capitalize }}
+			<svg xmlns="http://www.w3.org/2000/svg" width="8" height="6" viewBox="0 0 8 6" fill="none">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M7.53551 1.76257L4.35353 4.94455C4.15826 5.13981 3.84168 5.13981 3.64642 4.94455L0.46444 1.76257C0.269178 1.5673 0.269178 1.25072 0.46444 1.05546C0.659702 0.860196 0.976284 0.860196 1.17155 1.05546L3.99997 3.88389L6.8284 1.05546C7.02366 0.860196 7.34025 0.860196 7.53551 1.05546C7.73077 1.25072 7.73077 1.5673 7.53551 1.76257Z" fill="white"/>
+				</svg>
+		</span>
+	{% endif %}
+	<div id="mobile-menu-icon"></div>
+	<div class="cheeseburger-menu__close" id="cheeseburger-menu-close">
+		<span></span>
+	</div>
+</div>

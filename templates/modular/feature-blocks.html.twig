@@ -1,0 +1,87 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.module %}
+
+{% block render_block %}
+
+    <div class="feature-section " style="{% if(bg) %}background-image: url('{{ bg }}'){% endif %}" >
+        <div class="container">
+
+            <div class="feature-wrapper">
+                <div class="features-header-section">
+                    {% if module.title %}
+                        <h3 class="title section-title">{{ module.title.translatable|striptags('<span>')|raw }}</h3>
+                    {% endif %}
+
+                    <div class="description">
+                        {% if page.content %}
+                            {{ page.content|raw }}
+                        {% endif %}
+                    
+                    </div>				
+                </div>       
+
+                <div class="features-content-wrapper">
+
+                    {% set features = page.header.feature_blocks %}
+                    {% set features_first_row = page.header.feature_blocks[:3] %}
+                    {% set features_second_row = page.header.feature_blocks[3:] %}
+
+                    {% for feature_block in features_first_row %}
+                        {% if feature_block.description != '' and feature_block.title != '' %}
+
+                            <div class="feature-item">
+                                {% set image = page.media[feature_block.image] %}
+
+                                <div class="feature-image">
+                                    <img class="" src="{{ image.url }}"/>
+                                </div>
+
+                                <hr>
+                                
+                                <div class="feature-content">
+                                    <h4 class="feature-title">{{ feature_block.title.translatable }}</h4>
+                                    <p class="feature-description">{{ feature_block.description.translatable }}</p>
+
+                                </div>                                    
+                            </div>
+
+                        {% endif %}
+                    {% endfor %}
+
+                    {% for feature_block in features_second_row %}
+                        {% if feature_block.description != '' and feature_block.title != '' %}
+
+                            <div class="feature-item second-row-item-hide">
+                                {% set image = page.media[feature_block.image] %}
+
+                                <div class="feature-image">
+                                    <img class="" src="{{ image.url }}"/>
+                                </div>
+
+                                <hr>
+                                
+                                <div class="feature-content">
+                                    <h4 class="feature-title">{{ feature_block.title.translatable }}</h4>
+                                    <p class="feature-description">{{ feature_block.description.translatable }}</p>
+
+                                </div>                                    
+                            </div>
+
+                        {% endif %}
+                    {% endfor %}
+       
+                </div>
+
+                 <div class="actions">
+                    <button class="feature-btn" id="feature-btn">
+                        <span>View All</span>
+                        <img src="{{ url('theme://images/btn-arrow.png') }}" alt="Arrow" />
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
