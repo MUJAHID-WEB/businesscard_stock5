@@ -9,14 +9,14 @@
 }
 .contact-block-wrapper {
   display: flex;
-  gap: 1.25rem;
+  gap: 4rem;
   align-items: stretch;
-  justify-content: space-between;
+  // justify-content: space-between;
   
   @include desktop-small {
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 36px;
   }
 
   .contact-left {
@@ -28,7 +28,12 @@
     color: var(--color-text-dark);
     align-items: center;
     // flex: 40%;
-    max-width: 384px;
+    max-width: 608px;
+    width: 100%;
+
+    img {
+      width: 100%
+    }
 
     @include desktop-small {
       // display: none;
@@ -54,17 +59,17 @@
   // display: flex;
   // flex-direction: column;
 
-  padding: 145px 0;
+  padding: 0 0 150px;
   
   // position: relative;
-  background: var(--color-white); 
+  background: var(--color-secondary); 
   display: flex;
   flex-direction: column;
   gap: 60px;
 
   @include desktop-small {
     flex-direction: column-reverse;
-    padding: 40px 0;
+    padding: 0 0 40px;
   }
 
   @include desktop-small {
@@ -101,13 +106,13 @@
       flex-direction: column;
       align-items: flex-start;
       // gap: 6.25rem;
-      max-width: 658px;
+      max-width: 608px;
       width: 100%;
-      padding: 40px;
+      padding: 69px 64px;
       background: var(--color-white);
       border-radius: 24px;
       gap: 2.5rem;
-      box-shadow: 0px 4px 51.7px 0px rgba(0, 0, 0, 0.08);
+      // box-shadow: 0px 4px 51.7px 0px rgba(0, 0, 0, 0.08);
 
       // background: #F1F0E9;
       // border-radius: 8px;
@@ -117,8 +122,7 @@
         flex-direction: column;
         gap: 3rem;
         // align-items: center;
-        padding: 40px 20px;
-        border-radius: 20px;
+        padding: 24px 12px;
       }
 
       .contact-content {
@@ -206,7 +210,7 @@
         }
 
         input::placeholder, textarea::placeholder {
-          color: var(--color-text-light)
+          color: var(--color-white)
 
         }
 
@@ -253,7 +257,7 @@
           padding: 12px 20px;
           color: var(--color-white);
           @include typography(text-lg, bold);
-
+          width: 100%;
           // font-family: var(--secondary-font);
 
           background: var(--color-primary);

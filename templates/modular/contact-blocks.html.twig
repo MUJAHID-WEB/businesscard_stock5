@@ -32,18 +32,20 @@
             <div class="contact-block-wrapper">
                
                 <div class="contact-block-content-parent">
-                    <div class="contact-content">
+                    {# <div class="contact-content">
                      
                         <h1>{{ module.title.translatable|striptags('<span>')|raw }}</h1>
                         <p>{{ module.sub_title.translatable|striptags('<span>')|raw }}</p>
-                    </div>
+                    </div> #}
                     <div class="contact-form">
                         {% include 'forms/form.html.twig' with {form: forms('contact-us'), action: '#'} %}
                     </div>
                 </div>
 
                  <div class="contact-left">
-                    {% include 'widgets/contact-section.html.twig' %}
+
+                    <img class="" src="{{ image_left.url }}" alt="icon"/>
+                    {# {% include 'widgets/contact-section.html.twig' %} #}
    
                 </div>
             </div>
