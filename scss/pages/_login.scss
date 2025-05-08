@@ -11,18 +11,33 @@
   }
 }
 
-.forgot-section .comtainer {
-  padding: 0 1rem;
+.forgot-section{
+  .comtainer {
+    padding: 0 1rem;
+  }
+  .form-field input, .form-field textarea {
+    margin-bottom: 0px;
+  }
+  .form {
+    h2 {
+      margin-bottom: 0px;
+    }
+  }
+  .inline {
+    @include typography(text-md);
+    font-weight: 400 !important;
+    color: var(--color-text-dark);
+  }
 }
 // .login-section .container {
 //   padding: 0 1rem;
 // }
-.forgot-section,.change-password-section {
+.change-password-section {
   .inline {
     display: none;
   }
 }
-
+.forgot-section {}
 .login-section, .forgot-section, .unsu-section {
 
   .no-hero-section {
@@ -32,8 +47,8 @@
     margin-bottom: 0px;
   }
 
-  background-color: var(--color-white);
-  padding: 100px 0;
+  background-color: var(--color-secondary);
+  padding:0 0 150px;
   margin: 0;
   // border-radius: 8px 8px 0px 0px;
 
@@ -57,7 +72,7 @@
   // }
 
   @include desktop-small {
-    padding: 11.25rem 0 6.25rem;
+    padding: 0 0 40px;
   }
 
   .container {
@@ -71,14 +86,15 @@
 
   .login-title {
     font-family: var(--secondary-font);
-    @include typography(display-lg, semibold);
+    @include typography(display-md, semibold);
     color: var(--color-text-dark);
     text-align: left;
+    margin-bottom: 12px;
     // text-transform: uppercase;
 
-    @include desktop-small{
-      @include typography(display-sm, semibold);
-    }
+    // @include desktop-small{
+    //   @include typography(display-sm, semibold);
+    // }
   }
 
   .login-sub-title {
@@ -87,11 +103,33 @@
     text-align: left;
   }
 
+  .login-bootm-title {
+    @include typography(text-sm, regular);
+    color: var(--color-text-light);
+    text-align: center;
+    a {
+      text-decoration: none;
+      color: var(--color-primary);
+      @include typography(text-sm, bold);
+      cursor: pointer;
+    }
+  }
+
+  .form {
+    max-width: 360px;
+    width: 100%;
+
+    @include desktop-small {
+      max-width: 100%;
+    }
+  }
+
   .primary {
     display: flex;
     gap:10px;
     flex-direction: row-reverse;
     align-items: center;
+    padding: 10px 20px
   }
 
 
@@ -136,7 +174,7 @@
     flex-direction: column;
     gap: 2rem;
     .form-data.rememberme {
-      margin-top: 15px;
+      margin-top: 4px;
       text-align: left;
       display: flex;
       justify-content: space-between;
@@ -153,10 +191,11 @@
           appearance: auto;
           display: inline-block;
           position: unset;
+          box-shadow: unset;
         }
         label {
-          @include typography(text-xl, regular);
-          color: var(--login-text);
+          @include typography(text-sm, regular);
+          color: var(--color-text-dark);
           margin-left: 8px;
         }
       }
@@ -179,8 +218,8 @@
         margin-top: -1.3rem;
         text-decoration: none;
         padding: 0;
-        @include typography(text-xl,regular);
-        color: var(--color-text-light);
+        @include typography(text-sm,bold);
+        color: var(--color-primary);
         background-color: transparent;
         &.button{
           &:after, &:before{
@@ -189,7 +228,7 @@
           &:hover{
             box-shadow: none;
             transform: translateY(0);
-            color: var(--color-text-light) !important;
+            color: var(--color-primary) !important;
           }
         }
         @include mobile{

@@ -10,11 +10,11 @@
   // display: flex;
   // justify-content: center;
   // z-index: 1; 
-  // background: var(--color-secondary);
-  padding: 100px 1rem;
+  background: var(--color-secondary);
+  padding: 0px 1rem 150px;
 
   @include desktop-small{
-    padding: 40px 16px;
+    padding: 0px 16px 40px;
   }
 
   // &::before {
@@ -40,18 +40,18 @@
     top: calc(50% - 600px);
     max-width: 600px;
     width: 100%;
-    padding: 40px;
+    padding: 64px 69px;
     // padding-bottom: 75px;
     // padding-top: 75px;
     background: var(--color-white);
     border-radius: 24px;
     margin: 0 auto;
     margin-top: 0;
-    box-shadow: 0px 4px 16px 0px #33333314, 0px 4px 4px 0px #3333330A;
+    // box-shadow: 0px 4px 16px 0px #33333314, 0px 4px 4px 0px #3333330A;
 
     label {
-      @include typography(text-xl, regular);
-      color: var(--color-text-light);
+      @include typography(text-md, regular);
+      color: var(--color-text-dark);
     }
 
     // input, textarea{
@@ -78,8 +78,7 @@
     }
 
     @include desktop-small {
-      padding: 40px 20px;
-      border-radius: 20px;
+      padding: 24px 12px;
     }
 
     // @media (max-width: 630px) {
@@ -94,8 +93,8 @@
 
       .button {
         display: block;
-        width: fit-content;
-
+        width: 100%;
+        margin-top: 4px;
       }
 
       // .button::before {

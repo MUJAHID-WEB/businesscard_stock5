@@ -37,11 +37,21 @@
         {% endblock %}
 
         {% block card_content %}
-          <h2 class="login-title">{{ page.find('/home').header.login.top_title.translatable }}</h2>
-          <p class="login-sub-title">{{ page.find('/home').header.login.top_sub_title.translatable }}</p>
-          {% include 'partials/notifications.html.twig' %}
-          {% include 'partials/messages.html.twig' %}
-          {% include 'partials/login-form.html.twig' with {form: forms('user-login')} %}
+          <div class="form">
+            <h2 class="login-title">{{ page.find('/home').header.login.top_title.translatable }}</h2>
+            <p class="login-sub-title">{{ page.find('/home').header.login.top_sub_title.translatable }}</p>
+          </div>
+          <div class="form">
+            {% include 'partials/notifications.html.twig' %}
+            {% include 'partials/messages.html.twig' %}
+            {% include 'partials/login-form.html.twig' with {form: forms('user-login')} %}
+          </div>
+          <div class="form">
+            <p class="login-bootm-title">{{ page.find('/home').header.login.bottom_text.translatable }}
+              <a href="{{ url(grav.language.getActive ~ '/#modular_pricing') }}">{{ page.find('/home').header.login.bottom_button_text.translatable }}</a>
+            </p>
+          </div>
+
         {% endblock %}
       {% endembed %}
     </div>

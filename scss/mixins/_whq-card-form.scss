@@ -21,25 +21,28 @@ $spacing, $title_typography, $button_typography, $label_typography, $input_style
 
     .whq-card-container {
       display: flex;
-      align-items: stretch;
-      gap: 44px;
+      flex-direction: row-reverse;
+      // align-items: stretch;
+      // gap: 20px;
       // background-color: var(--color-secondary);
       justify-content: center;
+      align-items: center;
 
       @include desktop-small {
-        flex-direction: column;
+        flex-direction: column-reverse;
+        gap: 36px;
       }
 
       .form-image {
         // flex: 40%;
         width: 100%;
-        max-width: 448px;
+        max-width: 640px;
         img {
           width: 100%;
         }
-        @include desktop-small {
-          display: none;
-        }
+        // @include desktop-small {
+        //   display: none;
+        // }
       }
       .whq-card-title {
         flex: 1;
@@ -58,15 +61,17 @@ $spacing, $title_typography, $button_typography, $label_typography, $input_style
 
       .whq-card-content {
         // flex: 60%;
-        padding: 40px;
-        max-width: 708px;
+        padding: 60px 32px;
+        margin: 48px 56px;
+        max-width: 528px;
         width: 100%;
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        align-items: center;
+        gap: 32px;
         border-radius: $border-radius;
         background-color: var(--color-white);
-        box-shadow: 0px 4px 51.7px 0px rgba(0, 0, 0, 0.08);
+        // box-shadow: 0px 4px 51.7px 0px rgba(0, 0, 0, 0.08);
         border: 2px solid transparent;
         background-clip: padding-box, border-box;
         background-image: 
@@ -77,8 +82,9 @@ $spacing, $title_typography, $button_typography, $label_typography, $input_style
           margin-bottom: 1rem;
         }
         @include desktop-small {
-          padding: 40px 20px 60px;
+          padding: 24px 12px;
           width: 100%;
+          margin: 0px;
         }
 
         form {
@@ -119,8 +125,8 @@ $spacing, $title_typography, $button_typography, $label_typography, $input_style
 
                 input:focus {
                   outline: none;
-                  border-color: #98A2B3;
-                  box-shadow: none;
+                  // border-color: #98A2B3;
+                  // box-shadow: none;
                 }
 
                 input {
@@ -149,7 +155,8 @@ $spacing, $title_typography, $button_typography, $label_typography, $input_style
               // background: var(--unsubscribe-btn-bg) !important;
               // align-self: center;
               // color: var(--color-white);
-              margin-top: 3rem;
+              margin-top: 24px;
+              width: 100%;
 
               @include tablet {
                 width: 100%;

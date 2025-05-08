@@ -60,6 +60,16 @@ form:
                   label: Login Top Sub Title
                   classess: 'translatable'
 
+                header.login.bottom_text.translatable:
+                  type: text
+                  label: Login Bottom Text
+                  classess: 'translatable'
+
+                header.login.bottom_button_text.translatable:
+                  type: text
+                  label: Login Bottom Button Text
+                  classess: 'translatable'
+
                 header.forgot.top_title.translatable:
                   type: text
                   label: Forgot Top Title
