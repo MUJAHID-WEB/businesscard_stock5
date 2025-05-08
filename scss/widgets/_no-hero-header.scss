@@ -1,31 +1,70 @@
 .page-about .no-hero-section {
-  padding: 60px 0;
+  padding: 134px 0 0;
+
+  @include desktop-small{
+    padding: 112px 0 0;
+  }
 }
 
-.page-about .no-hero-section .no-hero-wrapper .head-content h1{
-  @include typography('display-xl', bold);
-  font-family: var(--secondary-font);
-  color: var(--color-white);
+.page-about .no-hero-section .no-hero-wrapper {
 
-  @include desktop-small {
-    @include typography('display-sm', bold);
+  .head-content {
+    gap: 16px;
+    width: 70%;
+
+    @include desktop-small{
+      width: 100%;
+    }
+
+    .subtitle h4 {
+      @include typography('text-xl', regular);
+
+      @include tablet{
+        @include typography('text-sm', regular);
+      }
+    }
+  }
+
+  .head-content h1 {
+    @include typography('display-xxl', bold);
+    font-family: var(--secondary-font);
+    color: var(--color-primary);
+    max-width: 642px;
+    margin-bottom: 18px;
+
+    @include desktop-small {
+      @include typography('display-lg', semibold);
+      max-width: 100%;
+      margin-bottom: 6px;
+    }
+  }
+
+  .image-contents {
+    margin-top: 39px;
+
+    @include desktop-small {
+      margin-top: 46px;
+    }
   }
 }
 
 
-.no-hero-section{
+
+
+
+.no-hero-section {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 42px 0;
-  background: var(--color-accent);
+  background: var(--color-secondary);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  padding: 150px 0 64px; 
 
-
-  @include desktop-small {
-    // margin-top: 0;
+  @include desktop-small{
+    padding: 130px 0 50px;
   }
 
   .no-hero-wrapper {
@@ -34,18 +73,19 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    gap: 20px;
+    // gap: 40px;
 
-    @include desktop-small{
-      gap: 34px;
+    @include desktop-small {
+      // gap: 34px;
     }
 
-    .head-content{
+    .head-content {
       display: flex;
       align-items: center;
       flex-direction: column;
       gap: 24px;
       width: 70%;
+
 
       @include desktop-small {
         width: 100%;
@@ -53,12 +93,14 @@
       }
 
       h1 {
-        @include typography('display-lg', bold);
+        @include typography('display-lg', semibold);
         font-family: var(--secondary-font);
-        color: var(--color-white);
+        color: var(--color-text-dark);
+        max-width: 524px;
 
         @include desktop-small {
-          @include typography('display-xs', semibold);
+          @include typography('display-md', semibold);
+          max-width: 100%;
         }
 
         span {
@@ -73,17 +115,21 @@
         }
       }
 
-      h4 {
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 20px;
-        color: var(--color-text-dark);
-        border-radius: 10px;
-        background: var(--color-primary);
-        padding: 6px 28px;
+      .subtitle{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.60);
+        padding: 10px 16px;
+
+        h4 {
+          @include typography('text-xl', regular);
+          color: var(--color-text-dark);
+          
+        }
       }
-    
+
 
       .no-hero-breadcrumb {
         // display: flex;
@@ -91,7 +137,7 @@
         width: 100%;
         text-align: center;
         // display: none;
-  
+
         ol {
           display: flex;
           justify-content: center;
@@ -102,31 +148,34 @@
           list-style: none;
           border-radius: 0;
           color: var(--color-white);
-  
+
           .breadcrumb-item {
             display: flex;
             align-items: center;
             @include typography(text-lg, regular);
+
             @include desktop-small {
               @include typography(text-md, regular);
             }
-            color: var(--color-white) ;
-  
+
+            color: var(--color-white);
+
             a {
               text-decoration: none;
-              color: var(--color-white) ;
+              color: var(--color-white);
               @include typography(text-lg, regular);
+
               @include desktop-small {
                 @include typography(text-md, regular);
               }
             }
-  
+
             &+.breadcrumb-item::before {
               float: none;
               padding-right: 0.25rem;
               content: "";
             }
-  
+
             &.arry svg {
               display: inline-block;
               @include typography(text-lg);
@@ -153,30 +202,21 @@
       }
 
       .nohero-btn {
-        // color: var(--color-white);
-        // text-decoration: none;
-        // display: flex;
-        // align-items: center;
-        // justify-content: space-between;
-        // background: var(--color-primary);
-        // padding: 12px 20px;
-        // border-radius: 8px;
-        // gap: 5px;
-
         text-decoration: none;
         display: flex;
         align-items: center;
-        gap: 6px;
+        gap: 10px;
+        background: var(--color-primary);
+        padding: 12px 24px;
+        border-radius: 12px;
 
-        span{
-          @include typography('text-md', 'extra_bold');
-          color: var(--color-text-dark);
-          background: var(--color-primary);
-          padding: 12px 22px;
-          border-radius: 22px;
+        span {
+          @include typography('text-lg', 'extra_bold');
+          color: var(--color-white);
 
-          @include desktop-small{
-            @include typography('text-sm', 'extra_bold');
+
+          @include desktop-small {
+            @include typography('text-md', 'bold');
           }
         }
       }
@@ -189,9 +229,8 @@
       position: relative;
       z-index: 1;
 
-
       .no-hero-img-for-desktop {
-        width: 75%;
+        width: 100%;
 
         @include tablet {
           width: 100%;
@@ -227,5 +266,3 @@
 
   }
 }
-
-

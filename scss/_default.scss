@@ -69,13 +69,13 @@ h6 span {
   line-height: 1.625rem;
   transition: all 0.3s ease-in-out;
   /* Add a smooth transition effect */
-  @include typography(text-md, bold);
+  @include typography(text-lg, extra_bold);
   border: none;
-  padding: 12px 40px;
+  padding: 12px 24px;
   justify-content: center;
   align-items: center;
   // gap: 8px;
-  border-radius: 8px;
+  border-radius: 12px;
 }
 
 

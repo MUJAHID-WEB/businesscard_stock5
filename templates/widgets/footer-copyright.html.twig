@@ -1,7 +1,7 @@
 <div class="footer-bottom">
     <div class="container">
          <p>{{ "METRICALO.COPYRIGHT"|t|raw }} &copy; {{ data.name }} {{ "now"|date('Y') }},  {{ data.company.name }} | {{ "METRICALO.RIGHTS_RESERVED"|t }}.</p>
-     
+{#      
         <div class="policy-pages-link-area">
             {% set policy_links = config.site.footer.links %}
 
@@ -10,14 +10,14 @@
                 {% set link_page = pages.find(link) %}
 
                 {% if link_page %}
-                    {% if link_page and link_page.menu and (link_page.url == '/' ~ link_page.language ~ '/terms-and-conditions' or link_page.url == '/' ~ link_page.language ~ '/privacy-policy' or link_page.url == '/' ~ link_page.language ~ '/cookie-policy') %}
+                    {% if link_page and link_page.menu and (link_page.url == '/' ~ link_page.language ~ '/privacy-policy' or link_page.url == '/' ~ link_page.language ~ '/terms-and-conditions') %}
                         
                         <a rel="noopener noreferrer " class="link copyright-link" href="{{ link_page.url }}">{{ link_page.menu }}</a>
                         
                     {% endif %}
                 {% endif %}
             {% endfor %}
-        </div>
+        </div> #}
 
     </div>
 

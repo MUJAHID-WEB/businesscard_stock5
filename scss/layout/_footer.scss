@@ -1,12 +1,13 @@
 .footer-section {
   overflow: hidden;
-  background: rgba(10, 92, 215, 0.05);
+  background: var(--color-primary);
+  color: var(--color-white);
   display: flex;
-  padding: 4rem 0 4rem 0;
+  padding: 44px 0 21px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 3rem;
+  gap: 32px;
   align-self: stretch;
 
   // background-image: url(../../images/footer-shape.png), url(../../images/footer-watermark.png);
@@ -15,9 +16,8 @@
   // background-position: top left, bottom left;
 
   @include tablet {
-    padding: 20px 0;
-    background: unset;
-    gap: 44px;
+    padding: 59px 0 24px;
+    gap: 18px;
   }
 
   .footer-logo-container {
@@ -39,12 +39,14 @@
     }
 
     .title {
-      // font-family: var(--default-font-2);
-      @include typography(display-xs, bold);
-      color: var(--color-text-dark);
+      font-family: var(--secondary-font);
+      @include typography(display-xs, semibold);
+      text-transform: capitalize;
+      // color: var(--color-text-dark);
 
       @include desktop-small {
-        @include typography(text-xl, medium);
+        @include typography(display-xs, semibold);
+        margin-bottom: 12px;
       }
     }
 
@@ -59,17 +61,17 @@
         @include typography(text-md, semibold);
       }
 
-      padding: 6px 0;
-      color: var(--color-text-dark);
+      // padding: 6px 0;
+      // color: var(--color-text-dark);
     }
 
     a {
-      color: var(--color-text-dark);
+      color: var(--color-white);
       text-decoration: none;
-      @include typography(text-lg, bold);
+      @include typography(text-md, regular);
 
       @include desktop-small {
-        @include typography(text-md, bold);
+        @include typography(text-md, regular);
       }
 
       &:hover {
@@ -91,40 +93,66 @@
 
 
       .footer-contact-wrapper {
-        width: 50%;
+        width: 56%;
         display: flex;
         // flex-direction: column;
-        gap: 6rem;
+        gap: 24px;
 
         @include desktop-small {
           width: 100%;
           flex-direction: column;
-          gap: 40px;
+          gap: 32px;
         }
+
+
 
         .footer-contact {
 
           display: flex;
           flex-direction: column;
           align-items: flex-start;
-          gap: 0.625rem;
+          gap: 24px;
+          width: 55%;
 
-          p,
-          a {
-            @include typography(text-lg, bold);
+          @include desktop-small{
+            width: 100%;
+          }
 
-            @include desktop-small {
+          .text-dark{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            .icon{
+              width: 24px;
+              height: 24px
+            }
+
+            a {
+
+            
               @include typography(text-md, regular);
+  
+              @include desktop-small {
+                @include typography(text-md, regular);
+              }
+  
+              color: var(--color-white);
+  
+              svg{
+                width: 24px;
+                height: 24px;
+              }            
             }
-
-            color: var(--color-text-dark);
+  
+            a {
+              span {
+                @include typography(text-lg, regular);
+              }
+            }
           }
 
-          a {
-            span {
-              @include typography(text-lg, regular);
-            }
-          }
+
         }
 
       }
@@ -140,21 +168,20 @@
         flex-basis: 32%;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: start;
         align-self: stretch;
-        gap: 20px;
+        gap: 24px;
 
         @include desktop-small {
-          gap: 20px;
+          gap: 32px;
         }
 
         .branding-text {
-          @include typography(text-xl, regular);
-          margin-bottom: 10px;
+          @include typography(text-md, regular);
 
-          // @include desktop-small {
-          //   @include typography(text-xl, regular);
-          // }
+          @include desktop-small {
+            @include typography(text-lg, regular);
+          }
         }
       }
 
@@ -162,11 +189,17 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 0.4375rem;
+        gap: 24px;
+        width: 35%;
+
+        @include desktop-small{
+          width: 100%;
+          gap: 12px;
+        }
 
         .menu-item {
           display: flex;
-          padding: 6px 0;
+          // padding: 6px 0;
           justify-content: flex-start;
           align-items: center;
           gap: 0.625rem;
@@ -176,12 +209,10 @@
             @include typography(text-md, regular);
           }
 
-          color: var(--color-text-dark);
 
-
-          &:nth-child(4), &:nth-child(5), &:nth-child(6){
-            display:none
-          }
+          // &:nth-child(4), &:nth-child(5), &:nth-child(6){
+          //   display:none
+          // }
         }
       }
     }
@@ -204,34 +235,34 @@
   }
 
   .footer-bottom {
-    border-top: 1px solid var(--color-gray);
+    // border-top: 1px solid var(--color-gray);
     width: 100%;
 
     .container {
       display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
+      justify-content: center;
+      align-items: center;
       // flex-direction: column;
       gap: 0.625rem;
       align-self: stretch;
       // background: var(--panel-footer-bg);    
-      padding-top: 44px;
+      padding-top: 21px;
 
 
 
       @include tablet {
         margin-top: 0;
-        padding-top: 30px;
+        padding-top: 24px;
         flex-direction: column-reverse;
         gap: 40px;
       }
 
       p {
-        color: var(--color-text-dark);
-        @include typography(text-md, bold);
+        // color: var(--color-text-dark);
+        @include typography(text-lg, regular);
 
         @include desktop-small {
-          @include typography(text-sm, bold);
+          @include typography(text-md, regular);
         }
 
         text-align: center;
@@ -249,9 +280,9 @@
         }
 
         .copyright-link {
-          border-right: 1px solid var(--color-text-dark);
+          border-right: 1px solid var(--color-white);
           padding: 10px 40px;
-          color: var(--color-text-dark);
+          color: var(--color-white);
           text-decoration: none;
           @include typography(text-md, bold);
 
@@ -283,29 +314,20 @@
 
 }
 
-.copyright-desktop-view {
 
-  .footer-cards {
-    margin-bottom: 40px;
-
-    @include desktop-small {
-      margin-bottom: 0;
-    }
-
-  }
-}
 
 
 
 .footer_top {
-  background: linear-gradient(to top,
-      rgba(10, 92, 215, 0.05) 50%,
-      rgba(10, 92, 215, 0) 50%);
+  background: linear-gradient(to top, var(--color-primary) 55%, transparent 55%);
+  padding-top: 34px;
 
-
-  @include tablet {
-    background: unset;
+  @include desktop-small{
+    background: linear-gradient(to top, var(--color-primary) 40%, transparent 40%);
   }
+
+
+
 
   .container {
     display: flex;
@@ -317,155 +339,51 @@
       justify-content: center;
       align-items: center;
       gap: 60px;
-      border-radius: 26px;
-      background: linear-gradient(180deg, #045EC9 0%, #071216 100%);
-      padding: 65px 60px;
-      max-width: 1216px;
+      border-radius: 8px;
+      background: var(--bg-secondary);
+      padding: 70px 60px;
+      width: 100%;
+      // max-width: 1216px;
 
       @include desktop-small {
         flex-direction: column;
         gap: 40px;
+        padding: 42px 16px;
       }
 
       @include tablet {
         padding: 24px 12px;
       }
 
-      .top_right {
-        display: flex;
-        flex: 1;
-        justify-content: start;
-        align-items: stretch;
-        gap: 10px;
 
-        .right_column {
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          align-items: stretch;
-          gap: 10px;
-
-          .count_card {
-            display: flex;
-            flex-direction: column;
-            justify-content: start;
-            align-items: start;
-            gap: 10px;
-            color: var(--color-text-dark);
-            border-radius: 20px;
-            background: var(--color-white);
-            padding: 24px 12px;
-
-            @include tablet {
-              padding: 8px;
-              gap: 2px;
-            }
-
-
-            h4 {
-              font-family: var(--secondary-font);
-              @include typography(display-sm, bold);
-
-              @include tablet {
-                @include typography(text-xl, extra_bold);
-              }
-            }
-
-            p {
-              @include typography(text-sm, regular);
-
-              @include tablet {
-                font-size: 8px;
-                line-height: 12px;
-              }
-            }
-          }
-
-          .trans_card {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-            gap: 4px;
-            padding: 30px 12px;
-            color: var(--color-text-dark);
-            border-radius: 20px;
-            background: var(--color-white);
-
-            @include tablet {
-              padding: 6px 8px;
-              gap: 2px;
-            }
-
-            img {
-              margin-bottom: 24px;
-              width: 100%;
-
-              @include tablet {
-                margin-bottom: 18px;
-              }
-            }
-
-            h4 {
-              @include typography(text-md, bold);
-
-              @include tablet {
-                @include typography(text-sm, bold);
-              }
-            }
-
-            p {
-              @include typography(text-sm, regular);
-
-              @include tablet {
-                font-size: 8px;
-                line-height: 12px;
-              }
-            }
-          }
-        }
-
-        .right_row {
-          max-width: 235px;
-          height: 310px;
-
-          @include tablet {
-            height: 173px;
-          }
-
-          img {
-            width: 100%;
-            height: -webkit-fill-available;
-          }
-        }
-      }
 
       .top_left {
         display: flex;
-        flex: 1.2;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
+        // flex: 1.2;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
         gap: 20px;
-        color: var(--color-white);
+        color: var(--color-text-dark);
+        width: 100%;
+
+        @include desktop-small {
+          flex-direction: column;
+          gap: 32px;
+          align-items: flex-start;
+        }
 
         h3 {
           font-family: var(--secondary-font);
-          @include typography(display-md, bold);
+          @include typography(display-lg, semibold);
+          max-width: 591px;
 
           @include tablet {
-            @include typography(display-sm, bold);
+            @include typography(display-sm, semibold);
+            max-width: 100%;
           }
         }
 
-        h5 {
-          margin-bottom: -20px;
-          @include typography(text-lg, bold);
-
-          @include tablet {
-            @include typography(text-md, regular);
-          }
-        }
 
         p {
           @include typography(text-lg, regular);
@@ -476,7 +394,9 @@
         }
 
         .button {
-          margin-top: 14px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
 
         }
 
