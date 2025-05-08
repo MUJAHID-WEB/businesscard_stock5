@@ -90,7 +90,6 @@
           @include typography('text-lg', 'extra_bold');
           color: var(--color-white);
 
-
           @include desktop-small {
             @include typography('text-md', 'bold');
           }

@@ -62,22 +62,29 @@
 </script>
 
 <script>
-window.addEventListener('load', () => {
-  const benefits = document.querySelectorAll('.benefits');
-
-  let maxHeight = 0;
-
-  benefits.forEach(el => {
-    el.style.height = 'auto';
-    const height = el.offsetHeight;
-    if (height > maxHeight) {
-      maxHeight = height;
-    }
-  });
-
-  benefits.forEach(el => {
-    el.style.height = maxHeight + 'px';
-  });
+document.addEventListener('DOMContentLoaded', function() {
+    const playButtons = document.querySelectorAll('.play-button');
+    
+    playButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const videoContainer = this.parentElement;
+            const video = videoContainer.querySelector('.lazy-video');
+         
+            if (!video.src && video.dataset.src) {
+                video.src = video.dataset.src;
+                video.load();
+            }
+            
+            video.play()
+                .then(() => {
+      
+                    this.style.display = 'none';
+                    video.setAttribute('controls', 'controls');
+                })
+                .catch(error => {
+                    console.error('Video failed:', error);
+                });
+        });
+    });
 });
-
 </script>
