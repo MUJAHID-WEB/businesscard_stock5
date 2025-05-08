@@ -25,10 +25,14 @@
         {% endblock %}
 
         {% block card_content %}
-          <h2 class="login-title">{{ page.find('/home').header.forgot.top_title.translatable }}</h2>
-          {% include 'partials/notifications.html.twig' %}
-          {% include 'partials/messages.html.twig' %}
-          {% include 'partials/forgot-form.html.twig' with {form: forms('forgot-password'), action: url('recover-password')} %}
+          <div class="form">
+            <h2 class="login-title">{{ page.find('/home').header.forgot.top_title.translatable }}</h2>
+          </div>
+          <div class="form">
+            {% include 'partials/notifications.html.twig' %}
+            {% include 'partials/messages.html.twig' %}
+            {% include 'partials/forgot-form.html.twig' with {form: forms('forgot-password'), action: url('recover-password')} %}
+          </div>
         {% endblock %}
       {% endembed %}
     </div>
