@@ -19,10 +19,24 @@ form:
                   label: Title
                   classes: 'translatable'
 
-                header.module.feature_bg:
+                header.module.buttons:
+                  type: list
+                  label: Feature Buttons
+                  style: vertical
+                  fields:
+                    .text.translatable:
+                      type: text
+                      label: Button Text
+                      classes: 'translatable'
+                    .link:
+                      type: text
+                      label: Button Link
+
+                header.module.feature_mobile:
                     type: pagemediaselect
-                    label: Feature Bg image
+                    label: Feature Mobile Image
                     preview_images: true
+
 
             header.feature_blocks_section:
               ordering@: 4
@@ -42,18 +56,6 @@ form:
                       type: textarea
                       label: Description
                       classes: 'translatable'
-                    .buttons:
-                      type: list
-                      label: Feature Buttons
-                      style: vertical
-                      fields:
-                        .text.translatable:
-                          type: text
-                          label: Button Text
-                          classes: 'translatable'
-                        .link:
-                          type: text
-                          label: Button Link
                     .image:
                       type: pagemediaselect
                       label: Image
