@@ -1,15 +1,6 @@
 
 <div class="header-buttons {{ login_order }}">
-	{% if grav.user.authenticated %}
-		<a class="btn {{navbar_button_style}}" href="{{ url('/task:login.logout') }}">{{ "METRICALO.LOGOUT"|t }}</a>
-	{% else %}
-		<a class="btn active-btn {{navbar_button_style}}" href="{{ url('/login') }}">{{ "METRICALO.LOGIN"|t }}</a>
-		<a class="{{navbar_button_style}} btn signup" href="{{ home_url|e }}{{ webdata('signup_url') }}">
-			<span>{{ "METRICALO.SIGNUP"|t }}</span>
 
-		
-		</a>
-	{% endif %}
 	{% if grav.language.enabled and grav.language.languages|count > 1 %}
 		<span class="language-switcher" data-current-lang="{{ grav.language.active }}" id="open-modal">
 		
@@ -20,6 +11,17 @@
 				</svg>
 		</span>
 	{% endif %}
+
+	{% if grav.user.authenticated %}
+		<a class="btn {{navbar_button_style}}" href="{{ url('/task:login.logout') }}">{{ "METRICALO.LOGOUT"|t }}</a>
+	{% else %}
+		<a class="{{navbar_button_style}} btn signup" href="{{ home_url|e }}{{ webdata('signup_url') }}">
+			<span>{{ "METRICALO.SIGNUP"|t }}</span>
+		</a>
+		<a class="btn active-btn {{navbar_button_style}}" href="{{ url('/login') }}">{{ "METRICALO.LOGIN"|t }}</a>
+		
+	{% endif %}
+	
 	<div id="mobile-menu-icon"></div>
 	<div class="cheeseburger-menu__close" id="cheeseburger-menu-close">
 		<span></span>
