@@ -1,5 +1,6 @@
 .faqs {
   padding: 80px 0 0;
+  margin-bottom: 50px;
   background-color: var(--color-secondary);
 
   // background-image: url(../../images/bg_faq.png);
@@ -9,6 +10,7 @@
 
   @include desktop-small {
     padding: 40px 0;
+    margin-bottom: 0;
   }
 
   .container {

@@ -51,7 +51,7 @@ form:
 
                 header.no_hero_content.subtitle.translatable:
                   type: text
-                  label: Title
+                  label: Sub Title
                   classess: 'translatable'
 
                 header.no_hero_content.description.translatable:

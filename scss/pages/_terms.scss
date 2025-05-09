@@ -1,5 +1,9 @@
 article.flex-1.max-w-4xl.w-full.mx-auto.prose.prose-h1\:text-brand.pt-40.pb-24.main-container {
-  padding: 120px 1rem;
+  padding: 40px 1rem 150px;
+
+  @include desktop-small{
+    padding: 0 1rem 128px;
+  }
 }
 
 
@@ -14,39 +18,29 @@ article.flex-1.max-w-4xl.w-full.mx-auto.prose.prose-h1\:text-brand.pt-40.pb-24.m
     }
 
     .main-container {
-      // background-size: 50%;
-      // position: relative;
-      background: var(--bg-body);
+
+      background: var(--color-secondary);
+      margin-bottom: 100px;
+
+      @include desktop-small{
+        margin-bottom: 0;
+      }
     
-      // background-position: top;
-      // background-size: 50%;
-      // z-index: 1;
-    
-      // &::before {
-      //   content: "";
-      //   position: absolute;
-      //   bottom: 0%;
-      //   left: 0;
-      //   width: 100%;
-      //   height: 185%;
-      //   clip-path: ellipse(100% 50% at 50% 100%);
-      //   background: var(--color-white);
-      //   z-index: -1;
-      // }
     }
   .content-section{
 
       background: white;
-      border-radius: 24px;
+      border-radius: 32px;
+      max-width: 1232px;
       width: 100%;
-      height: 50rem;
+      height: 455px;
       overflow-y: auto;
       box-shadow: 0px 4px 4px 0px rgba(51, 51, 51, 0.04), 0px 4px 16px 0px rgba(51, 51, 51, 0.08);
       display: flex;
       flex-direction: column;
 
     @include desktop-small{
-      padding: 2.5rem 1rem !important;
+      padding: 2.5rem 0 !important;
       top: calc(50% - 500px);
     }
   }
@@ -55,7 +49,7 @@ article.flex-1.max-w-4xl.w-full.mx-auto.prose.prose-h1\:text-brand.pt-40.pb-24.m
 
 
 .terms {
-  color: var(--color-primary);
+  color: var(--color-text-dark);
   .terms-section .belong-overview {
     font-size: 1.25rem !important;
   }
@@ -89,17 +83,17 @@ article.flex-1.max-w-4xl.w-full.mx-auto.prose.prose-h1\:text-brand.pt-40.pb-24.m
 
 
 
-.page-terms .content-section::before {
-  content: "";
-  flex-shrink: 0;
-  height: 2.5rem; 
-}
+// .page-terms .content-section::before {
+//   content: "";
+//   flex-shrink: 0;
+//   height: 2.5rem; 
+// }
 
-.page-terms .content-section::after {
-  content: "";
-  flex-shrink: 0;
-  height: 2.5rem; 
-}
+// .page-terms .content-section::after {
+//   content: "";
+//   flex-shrink: 0;
+//   height: 2.5rem; 
+// }
 
 .page-terms .content-section::-webkit-scrollbar {
   width: 6px; 

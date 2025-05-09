@@ -34,17 +34,19 @@
                         </div>
                     {% endif %}
 
-                    <div class="why_choose_contents">
-                        {% set img_in = page.media[why_choose.image_inside] %}
+                    {% set bg = page.media[why_choose.image_inside].url ?? '' %}
+
+                    <div class="why_choose_contents" style="{% if(bg) %}background-image: url('{{ bg }}'){% endif %}">
+                        {# {% set img_in = page.media[why_choose.image_inside] %}
                          {% if img_in != '' %}
                             <div class="img_in">
                                 <img class="" src="{{ img_in.url }}"/>
                             </div>
-                         {% endif %}
+                         {% endif %} #}
                         <div class="why_choose_content">
                             {% set icon = page.media[why_choose.icon] %}
                             <div class="icon_head">
-                                <img class="icon" src="{{ icon.url }}"/>
+                                {# <img class="icon" src="{{ icon.url }}"/> #}
                                 <h4 class="head">{{ why_choose.title.translatable }}</h4>
                             </div>
                             
