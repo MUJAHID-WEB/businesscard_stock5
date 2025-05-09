@@ -41,6 +41,47 @@
 
   .image-contents {
     margin-top: 39px;
+    position: relative;
+
+    .hero_bl {
+      position: absolute;
+      bottom: 19%;
+    left: 21%;
+
+      @include desktop-small {
+        display: none;
+      }
+    }
+
+    .hero_br {
+      position: absolute;
+      bottom: 19%;
+    right: 24%;
+
+      @include desktop-small {
+        display: none;
+      }
+    }
+
+    .hero_tl {
+      position: absolute;
+      top: 46%;
+    left: 14%;
+
+      @include desktop-small {
+        display: none;
+      }
+    }
+
+    .hero_tr {
+      position: absolute;
+      top: 49%;
+    right: 26%;
+
+      @include desktop-small {
+        display: none;
+      }
+    }
 
     @include desktop-small {
       margin-top: 46px;
@@ -228,9 +269,18 @@
       width: 100%;
       position: relative;
       z-index: 1;
+ 
+
+      .hero_tr,
+      .hero_tl,
+      .hero_br,
+      .hero_bl{
+        display: none;
+      }
 
       .no-hero-img-for-desktop {
         width: 100%;
+        margin-bottom: -8px;
 
         @include tablet {
           width: 100%;

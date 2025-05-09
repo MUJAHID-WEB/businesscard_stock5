@@ -323,6 +323,7 @@
   padding-top: 34px;
 
   @include desktop-small{
+    padding-top: 30px;
     background: linear-gradient(to top, var(--color-primary) 40%, transparent 40%);
   }
 

@@ -22,14 +22,14 @@
     display: flex;
     height: auto;
     width: 100%;
-    padding: 1rem 1rem 3.5rem;
+    padding: 32px 1rem 56px;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 36px;
     // border-radius: 0;
-    background: var(--color-white);
-    top: 60px;
-    // border: 1px solid var(--mobile-menu-bg-container);
+    background: var(--color-secondary);
+    top: 81px;
+    border-top: 1px solid rgba(255, 255, 255, 0.40);
 
     transform: translateX(-100%);
     transition: ease-in 0.2s;
@@ -63,21 +63,24 @@
     .cheeseburger-menu__menu {
       display: flex;
       // padding-bottom: 1.5rem;
-      flex-direction: column;
+      flex-direction: column-reverse;
       align-items: center;
-      gap: 1rem;
+      gap: 32px;
       align-self: stretch;
+
+      &:nth-child(2){
+        gap: 12px;
+      }
 
       .menu-item {
         text-align: center;
+        width: 85%;
       }
 
       .menu-item__link {
         color: var(--color-text-dark);
-        font-size: 1rem;
-        font-weight: 400;
+        @include typography(text-lg, extra_bold);
         text-decoration: none;
-        border-bottom: 4px solid transparent;
 
         &:active {
           border-color: var(--color-primary);
@@ -85,21 +88,15 @@
       }
 
       .btn {
-        padding: 10px 18px;
-        font-size: var(--text-font-size);
-        background: transparent;
-        color: var(--color-text-dark);
-
+        padding: 12px 20px;
+        @include typography(text-lg, bold);
+        background: var(--mobile-menu-bg-signup-button);
+        color: var(--mobile-menu-color-signup-button);
         appearance: none;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 24px;
         display: block;
         // border-radius: 30px;
 
         &.signup{
-          background: var(--mobile-menu-bg-signup-button);
-          color: var(--mobile-menu-color-signup-button);
           border: 1px solid var(--color-primary);
           display: flex;
           align-items: center;

@@ -24,7 +24,7 @@
 				{% else %}
 					<h1>{{ page.header.title|raw }}</h1>
 
-
+{# 
 					<nav class="d-inline-block no-hero-breadcrumb" aria-label="breadcrumb">
 						<ol class="breadcrumb">
 							{% for index, link in links %}
@@ -46,7 +46,7 @@
 								{% endif %}
 							{% endfor %}
 						</ol>
-					</nav>
+					</nav> #}
 				{% endif %}
 
 				{% if  noHeroContent.description != null %}
@@ -65,7 +65,19 @@
 			</div>
 			<!-- End head-content-->
 
+
+
 			<div class="image-contents">
+
+				<img class="hero_bl" src="{{ url('theme://images/hero/hero_bl.svg') }}" />
+
+				<img class="hero_br" src="{{ url('theme://images/hero/hero_br.svg') }}" />
+
+				<img class="hero_tl" src="{{ url('theme://images/hero/hero_tl.svg') }}" />
+
+				<img class="hero_tr" src="{{ url('theme://images/hero/hero_tr.svg') }}" />
+
+
 				{% if noHeroContent.image_for_desktop %}
 					<img class="no-hero-img-for-desktop" src="{{ page.media[noHeroContent.image_for_desktop].url }}" alt="no Hero Image" />
 				{% endif %}
