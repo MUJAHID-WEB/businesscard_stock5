@@ -27,8 +27,30 @@ form:
 
                 header.image:
                   type: pagemediaselect
-                  label: Image
+                  label: Bg Image
                   preview_images: true
+
+                header.contents.h1.translatable:
+                  type: text
+                  label: H1 Bottom Header
+                  classes: 'translatable'
+                header.contents.text.translatable:
+                  type: textarea
+                  label: Bottom Text
+                  classes: 'translatable'
+
+                header.contents.buttons:
+                  type: list
+                  label: Bottom Buttons
+                  style: vertical
+                  fields:
+                    .text.translatable:
+                      type: text
+                      label: Button Text
+                      classes: 'translatable'
+                    .link:
+                      type: text
+                      label: Button Link
 
             
             header.carousel_feature_items:
@@ -41,14 +63,7 @@ form:
                 header.carousel_feature_items:
                   type: list
                   fields:
-                    .title.translatable:
-                      type: text
-                      label: Title
-                      classes: 'translatable'
-                    .description.translatable:
-                      type: textarea
-                      label: Description
-                      classes: 'translatable'
+
                     .image:
                       type: pagemediaselect
                       label: Image

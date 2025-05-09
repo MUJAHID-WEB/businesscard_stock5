@@ -3,11 +3,12 @@
 {% set contents = page.header.contents %}
 {% set testimonial_items = page.header.carousel_feature_items %}
 {% set image = page.header.image %}
+{% set bg = page.media[image].url ?? '' %}
 
 {% block render_block %}
 
-	<div class="testimonials-section slide-up ">
-        <img class="testimonial-image" src="{{ page.media[image].url }}" alt="Image" />
+	<div class="testimonials-section slide-up " style="{% if(bg) %}background-image: url('{{ bg }}'){% endif %}">
+
 
         <div class="testimonials-wrapper">
 
@@ -20,12 +21,9 @@
 
                 {% for item in testimonial_items %}
                     <div class="item">
-                        <div class="review-image-area">
-                            <img src="{{ page.media[item.image].url }}" alt="Review"/>
-                        </div>
 
-                        <p>{{ item.description.translatable }}</p>
-                        <b>{{ item.title.translatable }}</b>
+                        <img src="{{ page.media[item.image].url }}" alt="Review"/>
+
                     </div>
                 {% endfor %}
 
@@ -34,41 +32,66 @@
 
         </div>
 
+        <div class="bottom-content"> 
+            <h1 class="bottom-title">
+                {{ contents.h1.translatable|striptags('<span>')|raw }}
+            </h1>
+
+            <p class="">{{ contents.text.translatable }}</p>
+
+            {% for button in contents.buttons  %}
+                <a class="button " href="{{ button.link }}">
+						<span>{{ button.text.translatable }}</span>
+						
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+						<path d="M15.7071 6.29289C15.3166 5.90237 14.6834 5.90237 14.2929 6.2929C13.9024 6.68342 13.9024 7.31659 14.2929 7.70711L17.5858 11H4C3.44772 11 3 11.4477 3 12C3 12.5523 3.44772 13 4 13H17.5858L14.2929 16.2929C13.9024 16.6834 13.9024 17.3166 14.2929 17.7071C14.6835 18.0976 15.3166 18.0976 15.7072 17.7071L20.7018 12.7124C20.7202 12.6942 20.738 12.6753 20.755 12.6558C20.8225 12.5781 20.8761 12.4926 20.9158 12.4024C20.9696 12.2801 20.9996 12.145 21 12.003V12C21 11.9969 21 11.9938 21 11.9907C20.9988 11.865 20.9745 11.7447 20.931 11.6341C20.8822 11.5098 20.8076 11.3933 20.7071 11.2929L15.7071 6.29289Z" fill="white"/>
+						</svg>
+					</a>
+            {% endfor %}
+
+        </div>
+
+
+
 	</div>
 
 
 <script>
-    $(document).ready(function(){
-        $(".owl-carousel").owlCarousel({
-            items: 5,
-            loop: true,
-            margin: 24,
+    $(document).ready(function () {
+        const $carousel = $(".owl-carousel"); 
+
+        const itemCount = $carousel.find(".item").length;
+
+        if (itemCount < 20) {
+            const cloneItems = $carousel.find(".item").slice(0, 4).clone();
+            $carousel.append(cloneItems);
+        }
+
+        $carousel.owlCarousel({
+            loop: itemCount > 5, 
+            margin: 30,
             autoplay: true,
             autoplayTimeout: 5000,
             smartSpeed: 450,
             autoplayHoverPause: true,
-            lazyLoad:true,
-            nav: true,
+            lazyLoad: true,
+            nav: false,
+            dots: false,
 
-
-            responsive:{
-                0:{
-                    items: 1,
-                    nav: true
+            responsive: {
+                0: {
+                    items: 2,
                 },
-                600:{
+                600: {
                     items: 3,
-                    nav: true
                 },
-                1000:{
+                1000: {
                     items: 5,
-                    nav: true,
-                    loop: true
                 }
             }
         });
     });
-
 </script>
+
 
 {% endblock %}
