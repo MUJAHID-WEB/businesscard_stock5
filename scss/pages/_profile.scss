@@ -1,3 +1,7 @@
+.profile-page .no-hero-section .no-hero-wrapper .head-content h1 {
+  max-width: 796px;
+}
+
 .btn__simple.my-orders {
   text-decoration: none;
   @include typography(text-lg, medium);
@@ -203,7 +207,7 @@
         h2 {
           color: var(--color-white);
           text-align: left;
-          // margin-bottom: 1.75rem;
+          margin-bottom: 1.5rem;
           @include typography(display-lg, semibold);
           @include desktop-small {
             @include typography(display-sm, semibold);
