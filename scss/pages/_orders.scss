@@ -7,10 +7,10 @@
   // max-width: 1280px;
   margin: 0 auto;
   text-align: left;
-  background: var(--order-bg-container);
+  background: var(--color-secondary);
   width: 100%;
   // position: relative;
-  padding: 100px 1rem 120px;
+  padding: 0 1rem 150px;
 
   // background-size: 50%;
   // z-index: 1;
@@ -30,23 +30,36 @@
     // margin: 0 1rem;
     width: unset;
 
-    padding: 100px 1rem;
+    padding: 0px 1rem 40px;
 
     &::before {
       height: 100%;
     }
   }
 
+  .table_wrapper {
+    padding: 80px 32px;
+    background-color: var(--color-white);
+    border-radius: 24px;
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+
+    @include desktop-small {
+      padding: 64px 16px;
+    }
+  }
 
   table {
     top: calc(50% - 550px);
     // position: absolute;
     margin: 0 auto;
+    
 
     border-collapse: separate;
     overflow: hidden;
     border-radius: 8px;
-    border: 1px solid var(--bg-body);
+    border: 1px solid #EAECF0;
     box-shadow: 0px 4px 51.7px 0px rgba(0, 0, 0, 0.08);
     width: calc(100% - 4rem);
     max-width: 1280px;
@@ -59,10 +72,10 @@
     }
 
     thead th {
-      background-color: var(--color-primary) !important;
-      color: var(--bg-body);
-      border-right: 1px solid var(--bg-body);
-      border-bottom: 1px solid var(--color-white);
+      background-color: #F2F4F7 !important;
+      color: var(--color-text-dark);
+      border-right: 1px solid #EAECF0;
+      border-bottom: 1px solid #EAECF0;
       @include typography(text-xs, regular);
     }
 
@@ -100,10 +113,10 @@
     }
 
     tbody td {
-      border-top: 1px solid var(--bg-body);
-      border-right: 1px solid var(--bg-body);
+      border-top: 1px solid #EAECF0;
+      border-right: 1px solid #EAECF0;
       @include typography(text-sm, medium);
-      background-color: var(--bg-body);
+      background-color: var(--color-white);
 
       @include desktop-small {
         white-space: nowrap;
