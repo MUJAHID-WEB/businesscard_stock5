@@ -145,6 +145,10 @@
               font-family: var(--secondary-font);
               color: var(--color-text-dark);
               height: auto !important;
+
+              @include desktop-small{
+                @include typography("text-lg", "bold");
+              }
             }
           }
 
