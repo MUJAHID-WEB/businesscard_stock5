@@ -1,10 +1,11 @@
 <div class="footer-menu">
-    <h4 class="title {{footer_title_color}}">{{ "METRICALO.FOOTER_LINKS"|t|upper }}</h4>
+    {# <h4 class="title {{footer_title_color}}">{{ "METRICALO.FOOTER_LINKS"|t|upper }}</h4> #}
+    <h4 class="title {{footer_title_color}}">{{ homepage_content.footer_link_title1.translatable }}</h4>
     
     {% for link in landingLinks %}
         {% if loop.index == 3 %}
             <div class="menu-item">
-                <a rel="noopener noreferrer" class="" href="/#modular_pricing">
+                <a rel="noopener noreferrer" class="" href="{{ home_url|e }}{{ webdata('signup_url') }}">
                     {{ homepage_content.pricing.translatable }}
                 </a>
             </div>

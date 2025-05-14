@@ -20,7 +20,7 @@
 		<div class="content-section terms">
 			<div class="container"> 
                 {% block content %}
-				{# {{ page.content|raw }} #}
+				{{ page.content|raw }}
 				{{ website_manager_api.getTerms.html|raw }}
 			    {% endblock %}
             </div>

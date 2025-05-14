@@ -79,3 +79,24 @@ form:
                     label: No Hero image bottom right
                     preview_images: true
 
+
+                header.footer_content.pricing.translatable:
+                  type: text
+                  label: Footer Pricing
+                  classess: 'translatable'
+
+                header.footer_content.footer_link_title1.translatable:
+                  type: text
+                  label: Footer link title one
+                  classess: 'translatable'
+
+                header.footer_content.footer_link_title2.translatable:
+                  type: text
+                  label: Footer link title two
+                  classess: 'translatable'
+
+                header.footer_content.footer_contact_title.translatable:
+                  type: text
+                  label: Footer contact title 
+                  classess: 'translatable'
+

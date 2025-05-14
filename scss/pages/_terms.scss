@@ -40,9 +40,14 @@ article.flex-1.max-w-4xl.w-full.mx-auto.prose.prose-h1\:text-brand.pt-40.pb-24.m
       flex-direction: column;
 
     @include desktop-small{
-      padding: 2.5rem 0 !important;
-      top: calc(50% - 500px);
+      padding: 2.5rem 1rem !important;
+      // top: calc(50% - 500px);
     }
+  }
+
+  .container {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -59,6 +64,10 @@ article.flex-1.max-w-4xl.w-full.mx-auto.prose.prose-h1\:text-brand.pt-40.pb-24.m
   }
   h2, h4, h3, h5, li, strong, th,b {
     font-weight: 500;
+  }
+
+  h1 span, h2 span, h3 span, h4 span, h5 span, h6 span{
+    color: var(--color-text-dark);
   }
 }
 .content-section .terms{

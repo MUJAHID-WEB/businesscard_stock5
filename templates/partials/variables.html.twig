@@ -5,6 +5,7 @@
 {% block render_block %}{% endblock %}
 
 <link href="{{ url('theme://assets/css/owl.carousel.min.css') }}" rel="stylesheet" />
+<link rel="stylesheet" href="{{ url('theme://assets/css/owl.theme.default.min.css') }}">
 {% do assets.addJs('theme://assets/js/animation.js', {group: 'bottom', loading: 'defer'}) %}
 {% do assets.addJs('theme://assets/js/owl.carousel.min.js', {group: 'bottom', loading: 'defer'}) %}
 

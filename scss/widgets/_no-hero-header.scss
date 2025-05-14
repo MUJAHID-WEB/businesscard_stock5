@@ -44,9 +44,10 @@
     position: relative;
 
     .hero_bl {
+      display:block;
       position: absolute;
       bottom: 19%;
-    left: 21%;
+      left: 21%;
 
       @include desktop-small {
         display: none;
@@ -54,9 +55,10 @@
     }
 
     .hero_br {
+      display:block;
       position: absolute;
       bottom: 19%;
-    right: 24%;
+      right: 24%;
 
       @include desktop-small {
         display: none;
@@ -64,9 +66,10 @@
     }
 
     .hero_tl {
+      display:block;
       position: absolute;
       top: 46%;
-    left: 14%;
+      left: 14%;
 
       @include desktop-small {
         display: none;
@@ -74,9 +77,10 @@
     }
 
     .hero_tr {
+      display:block;
       position: absolute;
       top: 49%;
-    right: 26%;
+      right: 26%;
 
       @include desktop-small {
         display: none;

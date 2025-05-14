@@ -45,7 +45,7 @@
         color: var(--color-primary);
         font-family: var(--secondary-font);
         @include typography('display-xxl', 'bold');
-        max-width: 642px;
+        max-width: 65%;
 
         @include desktop-small {
           @include typography('display-lg', 'semibold');

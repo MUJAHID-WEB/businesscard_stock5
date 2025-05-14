@@ -16,8 +16,9 @@
                 <h2>{{ contents.title.translatable }}</h2>
                 <p>{{ contents.description.translatable }}</p>
             </div>
+         </div>
 
-            <div class="testimonials-content-wrapper owl-carousel">
+            {# <div class="testimonials-content-wrapper owl-carousel">
 
                 {% for item in testimonial_items %}
                     <div class="item">
@@ -28,9 +29,19 @@
                 {% endfor %}
 
             
+            </div> #}
+             <div class="owl-carousel testimonials-content-wrapper">
+                {% for item in testimonial_items %}
+                    <div class="item">
+
+                        <img src="{{ page.media[item.image].url }}" alt="Review"/>
+
+                    </div>
+                {% endfor %}
             </div>
 
-        </div>
+
+       
 
         <div class="bottom-content"> 
             <h1 class="bottom-title">
@@ -55,41 +66,27 @@
 
 	</div>
 
+           
 
 <script>
     $(document).ready(function () {
-        const $carousel = $(".owl-carousel"); 
-
-        const itemCount = $carousel.find(".item").length;
-
-        if (itemCount < 20) {
-            const cloneItems = $carousel.find(".item").slice(0, 4).clone();
-            $carousel.append(cloneItems);
-        }
-
-        $carousel.owlCarousel({
-            loop: itemCount > 5, 
-            margin: 30,
+        $('.owl-carousel').owlCarousel({
+            loop:true,
+            margin:30,
             autoplay: true,
-            autoplayTimeout: 5000,
-            smartSpeed: 450,
-            autoplayHoverPause: true,
-            lazyLoad: true,
-            nav: false,
-            dots: false,
-
-            responsive: {
-                0: {
-                    items: 2,
+            responsive:{
+                0:{
+                    items:2
                 },
-                600: {
-                    items: 3,
+                600:{
+                    items:3
+                    
                 },
-                1000: {
-                    items: 5,
+                1000:{
+                    items:5
                 }
             }
-        });
+        })
     });
 </script>
 
