@@ -11,7 +11,7 @@
 }) %}
 
 
-{% include 'forms/form.html.twig' with { form: userSubscription, action: url(grav.language.getActive ~ '/profile/cancel-membership') } %}
+{% include 'forms/form.html.twig' with { form: userSubscription, action: url('profile/cancel-membership') } %}
 <div class="form-actions">
   {% if canSubmit != true %}
     <a href="{{ url(grav.language.getActive ~ '/profile/cancel-membership') }}" class="button danger no-underline">

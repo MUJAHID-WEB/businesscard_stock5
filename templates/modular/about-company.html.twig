@@ -56,7 +56,12 @@
                                 <img class="img-on-content" src="{{ page.media[module.img_on_content].url() }}" />
                             {% endif %}
 
-                            <img class="main-img" src="{{ image.url }}" alt="About Company Image"/>
+                            <picture>
+                                <source class="main-img" media="(min-width: 565px)" srcset="{{ image.url }}">
+                                <source class="main-img"media="(max-width: 564px)" srcset="{{ url('theme://images/about_company.webp') }}">
+                                <img class="main-img" src="{{ image.url }}" alt="About Company Image"/>
+                            </picture>
+                            {# <img class="main-img" src="{{ image.url }}" alt="About Company Image"/> #}
 
                             {% if module.overlay_image != null %}  
                                 <img class="overlay-image" src="{{ page.media[module.overlay_image].url() }}" />

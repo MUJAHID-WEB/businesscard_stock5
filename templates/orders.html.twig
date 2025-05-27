@@ -57,7 +57,7 @@
   {% if id %}
     <iframe src="{{ page.url }}?id={{ id }}&embed=true" frameborder="0" width="100%" height="800"></iframe>
   {% else %}
-    {# {% set invoices = website_manager_api.getInvoices(grav.user.data.customer_id) %} #}
+    {% set invoices = website_manager_api.getInvoices(grav.user.data.customer_id) %}
 
 
     <div class="table_wrapper">
@@ -74,8 +74,20 @@
       </tr>
       </thead>
       <tbody>
+        {% for invoice in invoices.data %}
+          <tr>
+            <td>{{ invoice.id }}</td>
+            <td>{{ invoice.product.name }}</td>
+            <td>{{ invoice.type }}</td>
+            <td>{{ invoice.total_incl_vat }} {{ invoice.currency }}</td>
+            <td>{{ invoice.status }}</td>
+            <td>{{ invoice.created_at|date('d/m/Y H:i:s') }}</td>
+            <td><a class="btn" href="{{ url(grav.language.getActive ~ '/profile/orders') }}?id={{ invoice.id }}">{{ icon('eye', 'h-4 w-4 mr-2')|raw }}{{ 'METRICALO.VIEW_INVOICE'|t }}</a></td>
+          </tr>
+      {% endfor %}
+
       {# {% for invoice in invoices.data %} #}
-        <tr>
+        {# <tr>
           <td>1</td>
           <td>{{ invoice.product.name }} Golden Package</td>
           <td>{{ invoice.type }} Monthly</td>
@@ -83,7 +95,7 @@
           <td>{{ invoice.status }} Active</td>
           <td>{{ invoice.created_at|date('d/m/Y H:i:s') }} 02 Feb, 2025</td>
           <td><a class="btn" href="{{ url(grav.language.getActive ~ '/profile/orders') }}?id={{ invoice.id }}">{{ icon('eye', 'h-4 w-4 mr-2')|raw }}{{ 'METRICALO.VIEW_INVOICE'|t }}</a></td>
-        </tr>
+        </tr> #}
       {# {% endfor %} #}
       </tbody>
     </table>
