@@ -80,12 +80,42 @@ document.addEventListener('DOMContentLoaded', function() {
                 .then(() => {
       
                     this.style.display = 'none';
-                    video.setAttribute('controls', 'controls');
+                    
                 })
                 .catch(error => {
                     console.error('Video failed:', error);
                 });
         });
     });
+
+    const allVideos = document.querySelectorAll('.lazy-video');
+        allVideos.forEach(video => {
+            const container = video.closest('.video-container');
+            const playButton = container.querySelector('.play-button');
+            video.addEventListener('mouseenter', () => {
+                if (!video.paused) {
+                    video.style.cursor = 'pointer';
+                }
+            });
+            video.addEventListener('mouseleave', () => {
+                video.style.cursor = 'default';
+            });
+            video.addEventListener('click', () => {
+                if (!video.paused) {
+                    video.pause();
+                }
+            });
+            video.addEventListener('play', () => {
+                if (playButton) {
+                    playButton.style.display = 'none';
+                }
+            });
+            video.addEventListener('pause', () => {
+                if (playButton) {
+                   
+                    playButton.style.removeProperty('display');
+                }
+            });
+        });
 });
 </script>
