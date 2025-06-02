@@ -204,6 +204,10 @@
       &:nth-child(1) {
         .why_choose_content {
           flex-direction: column-reverse;
+
+          .icon_head .head{
+            color: var(--color-text-light);
+          }
         }
 
       }
@@ -221,6 +225,7 @@
 
           .icon_head .head {
             max-width: 191px;
+            letter-spacing: -1.92px;
           }
 
           .desc {

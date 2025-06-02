@@ -18,7 +18,7 @@
 					{# <p>{{ module.text.translatable }}</p> #}
 
 					{% for button in module.buttons  %}
-						<a class="button " href="{{ button.link }}">
+						<a class="button " href="{{ home_url|e }}{{ button.link }}">
 
 						<span>{{ button.text.translatable|striptags('</br>')|raw }}</span>
 

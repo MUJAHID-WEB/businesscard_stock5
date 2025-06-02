@@ -1,5 +1,5 @@
 <div class="footer-contact">
-    <h4 class="title {{footer_title_color}}">{{ "METRICALO.CONTACT_INFO"|t|upper }}</h4>
+    {# <h4 class="title {{footer_title_color}}">{{ "METRICALO.CONTACT_INFO"|t|upper }}</h4> #}
     {# <p class="{{footer_text_color}}"><b><span class="span">{{ 'METRICALO.HOURS'|t }}</b>: {{ webdata('support_hours') }}<br /></span></p>
 
     <p class="{{footer_text_color}}"><b>{{ 'METRICALO.PHONE'|t }}</b>: <a href="tel:{{ webdata('support_phone') }}" target="_blank" rel="noopener noreferrer"><span class="span">{{ webdata('support_phone') }}<br /></span></a></p>
@@ -9,6 +9,8 @@
     <p class="{{footer_text_color}}"><b>{{ 'METRICALO.ADDRESS'|t }}</b>: <a><span>{{ webdata('company.address') }}, {{ webdata('company.city') }}, {{ webdata('company.postcode') }}, {{ webdata('company.country') }}</span></a></p> #}
 
     {# <p class="{{footer_text_color}}"><b><span class="span">{{ 'METRICALO.HOURS'|t }}</b>: {{ webdata('support_hours') }}<br /></span></p> #}
+
+     <h4 class="title {{footer_title_color}}">{{ homepage_content.footer_contact_title.translatable }}</h4>
 
     <div class="{{footer_text_color}}">
         <div class="icon">

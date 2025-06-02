@@ -1,6 +1,7 @@
 <div class="footer-menu">
-    <h4 class="title {{footer_title_color}}">{{ "METRICALO.FOOTER_LINKS"|t|upper }}</h4>
-    
+    {# <h4 class="title {{footer_title_color}}">{{ "METRICALO.USEFUL_LINKS"|t|upper }}</h4> #}
+     <h4 class="title {{footer_title_color}}">{{ homepage_content.footer_link_title2.translatable }}</h4>
+
     {% for link in privacyLinks %}
         {% set link_page = pages.find(link) %}
         {% if link_page %}

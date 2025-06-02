@@ -61,6 +61,7 @@
     position: relative;
 
     .hero_bl {
+      display:block;
       position: absolute;
       bottom: 19%;
       left: 21%;
@@ -71,6 +72,7 @@
     }
 
     .hero_br {
+      display:block;
       position: absolute;
       bottom: 19%;
       right: 24%;
@@ -81,6 +83,7 @@
     }
 
     .hero_tl {
+      display:block;
       position: absolute;
       top: 46%;
       left: 14%;
@@ -91,6 +94,7 @@
     }
 
     .hero_tr {
+      display:block;
       position: absolute;
       top: 49%;
       right: 26%;

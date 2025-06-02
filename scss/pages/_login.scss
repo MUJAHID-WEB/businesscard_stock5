@@ -154,19 +154,20 @@
   );
 
   #grav-login {
-    .form-field:first-child{
+    .form-field{
       &:before{
+        @include typography(text-md,regular);
+        margin-bottom: 10px;
         display: block;
-        @include typography(text-md,semibold);
-      }
-    }
-    .form-field:nth-child(2){
-      &:before{
-        display: block;
-        @include typography(text-md,semibold);
+        color: var(--color-text-dark);
 
+        @include mobile{
+          @include typography(text-md,regular);
+          line-height: 24px;
+        }
       }
     }
+
   }
 
   .form-actions{

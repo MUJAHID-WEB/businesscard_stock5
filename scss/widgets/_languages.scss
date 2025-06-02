@@ -37,7 +37,7 @@
 
     @include desktop-small {
       flex: 1 0 calc(33% - 10px);
-      justify-content: center;
+      justify-content: flex-start;
     }
     
     max-height: 400px;
@@ -54,6 +54,7 @@
 
         &:hover {
           text-decoration: underline;
+          width: 130px;
         }
 
         .img {
@@ -68,7 +69,8 @@
           white-space: nowrap;
           letter-spacing: 0;
           color: #000000;
-          @include typography(base,regular)
+          @include typography(base,regular);
+          word-break: break-all;
         }
 
         .text-wrapper-2 {
