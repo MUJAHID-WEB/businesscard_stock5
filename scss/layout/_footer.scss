@@ -93,7 +93,7 @@
 
 
       .footer-contact-wrapper {
-        width: 56%;
+        width: 68%;
         display: flex;
         // flex-direction: column;
         gap: 24px;
@@ -112,7 +112,7 @@
           flex-direction: column;
           align-items: flex-start;
           gap: 24px;
-          width: 55%;
+          width: 60%;
 
           @include desktop-small{
             width: 100%;
@@ -120,7 +120,7 @@
 
           .text-dark{
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 8px;
 
             .icon{
@@ -165,7 +165,7 @@
       }
 
       .footer-logo-area {
-        flex-basis: 32%;
+        flex-basis: 25%;
         display: flex;
         flex-direction: column;
         justify-content: start;
@@ -190,7 +190,7 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 24px;
-        width: 35%;
+        width: 52%;
 
         @include desktop-small{
           width: 100%;
